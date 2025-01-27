@@ -1,0 +1,18 @@
+-- empty proposal
+SELECT distinct
+    pt.id
+  , pt.title
+  , pt.abstract
+--   , pt.detailed_description
+--   , pt.outline
+--   , pt.supplementary
+--   , pt.objective
+--   , comment as reviewer_comment
+FROM reviews_review rr
+JOIN proposals_talkproposal pt
+    ON pt.id = rr.proposal_id
+WHERE 1=1
+  and pt.conference = 'pycontw-2024'
+  and vote = '-1'
+  and abstract = ''
+order by abstract
