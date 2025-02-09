@@ -14,8 +14,7 @@
 1. weight should be different in -0 and +0
 2. What is the selection criteria? how many +1 vote or without -1 vote?
 3. once have -1 vote, didn't get mean the proposal is bad?
-4. need to get final propsal result would be more accurate
-5. seems confusion matrix is a good idea
+4. need to get final propsal accepted or rejected would be more accurate
 
 
 # Reference
