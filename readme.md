@@ -3,6 +3,10 @@
 1. first goal is filter out bad proposal
 2. second goal is assistant reviewer to review proposal
 
+
+# TODO
+1. one json parse fail due to " ", happened at least 20+ times in 70, maybe should string transfer before json parse
+
 # Result
 1. analysis proposals with -1 vote
     -overall agreement rate is 0.294
