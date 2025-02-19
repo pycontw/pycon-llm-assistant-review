@@ -1,11 +1,10 @@
-# PyCon TW 2025 Proposal Review Assistant
+# PyCon TW Proposal Review Assistant
 
-This project aims to develop an LLM-powered system to assist in the review process of PyCon Taiwan 2025 conference proposals. The system helps filter out potentially problematic proposals and provides automated review assistance to human reviewers.
+This project aims to develop an LLM-powered system to assist in the review process of PyCon Taiwan conference proposals. The system helps review assistance to reviewers.
 
 ## Project Goals
-1. Filter out potentially problematic proposals through automated analysis
-2. Assist human reviewers by providing AI-generated preliminary reviews
-3. Validate the effectiveness of LLM-based review assistance
+1. Assist human reviewers by providing AI-generated preliminary reviews
+2. Validate the effectiveness of LLM-based review assistance
 
 ## Setup
 
