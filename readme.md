@@ -25,8 +25,6 @@ openpyxl  # for Excel file handling
 pydantic  # for data validation and parsing
 ```
 
-Note: Specific version requirements are being documented and will be updated soon.
-
 ### Environment Setup
 1. Clone this repository
 2. Create a `.env` file with your API keys:
@@ -34,95 +32,102 @@ Note: Specific version requirements are being documented and will be updated soo
    GOOGLE_API_KEY=your_api_key_here
    ```
 
-3. Install dependencies: (TODO: update the requirements.txt)
-   ```
-   pip install -r requirements.txt
-   ```
+3. Install packages
 
-
-## Project Structure (wrong, should be updated)
+## Project Structure
 ```
 .
-├── data/                   # Data files
-│   ├── pycon_2025_raw_vote.xlsx
-│   ├── merged_df_0208.xlsx
-│   └── final_df_0127.xlsx
+├── data/                   # Data files (stored in organization drive for privacy)
+│   ├── pycon_2024_proposal.xlsx     # Raw proposal data
+│   ├── pycon_2024_review.xlsx       # Human review data
+│   └── *_prompt_gemini_*.xlsx       # LLM review results
 ├── prompt/                 # LLM prompt templates
-│   ├── full_prompt.txt
-│   └── simple_prompt_david.txt
-├── exp/                    # Experimental notebooks
-│   └── jsonparser_error_control.ipynb
-├── notebooks/             # Analysis notebooks
-│   ├── llm_review.ipynb
-│   ├── llm_review_v2.ipynb
-│   └── merge_llm_and_revies.ipynb
+│   ├── full_prompt.txt    # Detailed review prompt
+│   └── simple_prompt.txt  # Basic review prompt
+├── llm_review_v2.ipynb   # Main LLM review notebook
+├── merge_llm_and_reviews.ipynb  # Analysis notebook
 └── README.md
 ```
 
-## Current Status (2025-02-17)
+## Implementation Details
 
-### Vote Distribution Analysis
-1. Human Review Distribution:
-   - +0 (Neutral): 48 (62.3%)
-   - +1 (Positive): 14 (18.2%)
-   - -0 (Slightly Negative): 12 (15.6%)
-   - -1 (Negative): 3 (3.9%)
+### LLM Review Process
+1. **Model**: Using Gemini Flash (gemini-2.0-flash-exp)
+2. **Review Format**:
+   ```python
+   class ProposalReview(BaseModel):
+       summary: str
+       comment: str
+       vote: Literal['+1', '+0', '-0', '-1']
+   ```
 
-2. Simple Prompt LLM Distribution:
-   - +0: 58 (75.3%)
-   - +1: 17 (22.1%)
-   - -1: 1 (1.3%)
-   - -0: 1 (1.3%)
+### Analysis Results (2025-02-17)
 
-3. Complete Prompt LLM Distribution: (TODO: update the result)
-   - +0: 69 (89.6%)
-   - +1: 4 (5.2%)
-   - -0: 4 (5.2%)
+#### 1. Vote Distribution
+
+| Vote Type | Human Reviews | Simple Prompt | Complete Prompt |
+|-----------|--------------|---------------|-----------------|
+| +0        | 62.3%       | 75.3%         | 85.7%          |
+| +1        | 18.2%       | 22.1%         | 10.4%          |
+| -0        | 15.6%       | 1.3%          | 3.9%           |
+| -1        | 3.9%        | 1.3%          | 0%             |
+
+#### 2. Agreement Rates
+- Simple Prompt: 59.7%
+- Complete Prompt: 55.8%
+
+#### 3. Confusion Matrices
+
+Simple Prompt Agreement Analysis:
+```
+vote_most_common_vote  +0  +1  -0  -1  All
+LLM_vote                                  
++0                     38   8  10   2   58
++1                     10   6   1   0   17
+-0                      0   0   1   0    1
+-1                      0   0   0   1    1
+All                    48  14  12   3   77
+```
+
+Complete Prompt Agreement Analysis:
+```
+vote_most_common_vote  +0  +1  -0  -1  All
+LLM_vote                                  
++0                     41  13  11   1   66
++1                      7   1   0   0    8
+-0                      0   0   1   2    3
+All                    48  14  12   3   77
+```
 
 ### Key Findings
 1. Conservative Tendency:
    - All evaluation methods tend to give neutral ratings (+0)
-   - Complete Prompt shows extremely conservative behavior (89.6% +0)
+   - Complete Prompt shows extremely conservative behavior (85.7% +0)
    - Human reviews show more balanced distribution
 
 2. Model Performance:
-   - Overall agreement rate with human reviewers: 0.294
-   - Confusion matrices for different prompts:
-     1. Simple prompt result:
-        ![Simple Prompt Confusion Matrix](image-2.png)
-     2. Complete prompt result:
-        ![Complete Prompt Confusion Matrix](image-3.png)
+   - Simple Prompt Agreement Rate: 59.7%
+   - Complete Prompt Agreement Rate: 55.8%
+   - Confusion matrices show both models tend to be more conservative than human reviewers
+   - Simple prompt shows slightly better agreement with human reviewers
+   - Limited negative vote prediction
+   - Need for better calibration with human reviewers
 
-## Current Challenges
-1. Model Behavior:
-   - Complete prompt shows overly conservative behavior
-   - Need for better weighting system between different vote categories (-0 vs +0)
-   - Unclear selection criteria for proposal acceptance
-
-2. Validation:
-   - Need final proposal acceptance/rejection data for proper validation
-   - Uncertainty about handling proposals with -1 votes
-
-## Future Improvements
-1. Technical Enhancements:
-   - Add summary column for each proposal
-   - Create weighted scoring system
-
-2. Model Improvements:
-   - Implement LLM-as-judge to evaluate results
-   - Improve prompt engineering to reduce conservative bias
-   - Develop clear selection criteria
-
-3. Process Improvements:
-   - Validate against final acceptance/rejection results
-   - Establish clear guidelines for handling negative votes
-
-## Contributing
-Feel free to contribute to this project by:
-1. Opening issues for bugs or feature requests
-2. Submitting pull requests
-3. Improving documentation
-4. Sharing insights about the review process
+## TODO
+- [ ] Test other LLM models:
+  - Gemini Pro 1.5 / 2
+  - Claude 3 Haiku
+  - GPT-4 Mini
+- [ ] LLM result 中英文 translation
+- [ ] LLM-as-a-Judge: evaluate review alignment
 
 ## References
 1. [Gemini API Documentation](https://ai.google.dev/gemini-api/docs/models/experimental-models?hl=zh-tw)
+2. [LLM as a Judge: 用語言模型來評估好壞](https://ywctech.net/ml-ai/paper-llm-as-a-judge/)
+
+## Contributing
+Contributions are welcome! Please:
+1. Open issues for bugs or feature requests
+2. Submit pull requests with improvements
+3. Help improve documentation
+4. Share insights about the review process
