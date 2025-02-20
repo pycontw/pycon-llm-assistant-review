@@ -113,6 +113,10 @@ All                    48  14  12   3   77
    - Need for better calibration with human reviewers
 
 ## TODO
+### first priority
+- [ ] Gather more negative reviews (-1) before 2024 PyCon TW
+- [ ] Check the red line principle
+### second priority
 - [ ] Test other LLM models:
   - Gemini Pro 1.5 / 2
   - Claude 3 Haiku
