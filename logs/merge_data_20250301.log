@@ -1,0 +1,16 @@
+2025-03-01 00:28:27,948 - __main__ - INFO - Loading data files
+2025-03-01 00:28:28,380 - __main__ - INFO - Calculating vote statistics
+2025-03-01 00:28:28,486 - __main__ - INFO - Merging data
+2025-03-01 00:28:28,514 - __main__ - INFO - Saving merged data to test_merged_output.xlsx
+2025-03-01 00:28:28,699 - __main__ - INFO - Analyzing vote distribution
+2025-03-01 00:28:28,700 - __main__ - ERROR - Required columns not found: LLM_vote or vote_most_common_vote
+2025-03-01 00:28:28,701 - __main__ - INFO - Analyzing vote distribution
+2025-03-01 00:28:28,702 - __main__ - ERROR - Required columns not found: LLM_vote or vote_most_common_vote
+2025-03-01 00:29:18,864 - __main__ - INFO - Loading data files
+2025-03-01 00:29:19,328 - __main__ - INFO - Calculating vote statistics
+2025-03-01 00:29:19,369 - __main__ - INFO - Merging data
+2025-03-01 00:29:19,377 - __main__ - INFO - Saving merged data to test_merged_output.xlsx
+2025-03-01 00:29:19,522 - __main__ - INFO - Analyzing vote distribution
+2025-03-01 00:29:19,522 - __main__ - ERROR - Required columns not found: LLM_vote or vote_most_common_vote
+2025-03-01 00:29:19,524 - __main__ - INFO - Analyzing vote distribution
+2025-03-01 00:29:19,524 - __main__ - ERROR - Required columns not found: LLM_vote or vote_most_common_vote

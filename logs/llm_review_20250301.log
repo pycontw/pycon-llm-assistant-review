@@ -1,0 +1,1017 @@
+2025-03-01 00:29:29,568 - __main__ - INFO - Running data merge and analysis
+2025-03-01 00:29:29,568 - merge_data - INFO - Loading data files
+2025-03-01 00:30:07,961 - __main__ - INFO - Running data merge and analysis
+2025-03-01 00:30:07,961 - merge_data - INFO - Loading data files
+2025-03-01 00:30:08,307 - merge_data - INFO - Calculating vote statistics
+2025-03-01 00:30:08,333 - merge_data - INFO - Merging data
+2025-03-01 00:30:08,338 - merge_data - INFO - Saving merged data to ./pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 00:30:08,452 - merge_data - INFO - Analyzing vote distribution
+2025-03-01 00:30:08,452 - merge_data - ERROR - Required columns not found: LLM_vote or vote_most_common_vote
+2025-03-01 00:30:08,454 - merge_data - INFO - Analyzing vote distribution
+2025-03-01 00:30:08,454 - merge_data - ERROR - Required columns not found: LLM_vote or vote_most_common_vote
+2025-03-01 00:30:08,454 - __main__ - INFO - Merged data saved to ./pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 00:30:20,126 - __main__ - INFO - Loading proposal data from data/pycon_2024_proposal.xlsx
+2025-03-01 00:30:20,329 - __main__ - INFO - Setting up LLM chain with prompt /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/prompt/simple_prompt.txt and model gemini-2.0-flash
+2025-03-01 00:30:20,371 - __main__ - INFO - Processing proposal: 2178936233474917120
+2025-03-01 00:30:23,817 - __main__ - INFO - Execution time for proposal 2178936233474917120: 3.45 seconds
+
+2025-03-01 00:30:23,818 - __main__ - INFO - Processing proposal: 2178979854999880448
+2025-03-01 00:30:25,646 - __main__ - INFO - Execution time for proposal 2178979854999880448: 1.83 seconds
+
+2025-03-01 00:30:25,647 - __main__ - INFO - Processing proposal: 2178981707884004096
+2025-03-01 00:30:27,459 - __main__ - INFO - Execution time for proposal 2178981707884004096: 1.81 seconds
+
+2025-03-01 00:30:27,459 - __main__ - INFO - Processing proposal: 2179613228097602304
+2025-03-01 00:30:29,338 - __main__ - INFO - Execution time for proposal 2179613228097602304: 1.88 seconds
+
+2025-03-01 00:30:29,339 - __main__ - INFO - Processing proposal: 2180814504890204928
+2025-03-01 00:30:31,588 - __main__ - INFO - Execution time for proposal 2180814504890204928: 2.25 seconds
+
+2025-03-01 00:30:31,589 - __main__ - INFO - Processing proposal: 2181661100230050560
+2025-03-01 00:30:33,639 - __main__ - INFO - Execution time for proposal 2181661100230050560: 2.05 seconds
+
+2025-03-01 00:30:33,639 - __main__ - INFO - Processing proposal: 2181767915890541312
+2025-03-01 00:30:36,196 - __main__ - INFO - Execution time for proposal 2181767915890541312: 2.56 seconds
+
+2025-03-01 00:30:36,197 - __main__ - INFO - Processing proposal: 2183455404749488896
+2025-03-01 00:30:37,754 - __main__ - INFO - Execution time for proposal 2183455404749488896: 1.56 seconds
+
+2025-03-01 00:30:37,754 - __main__ - INFO - Processing proposal: 2184258951825064704
+2025-03-01 00:30:39,575 - __main__ - INFO - Execution time for proposal 2184258951825064704: 1.82 seconds
+
+2025-03-01 00:30:39,576 - __main__ - INFO - Processing proposal: 2184265081062163200
+2025-03-01 00:30:41,623 - __main__ - INFO - Execution time for proposal 2184265081062163200: 2.05 seconds
+
+2025-03-01 00:30:41,624 - __main__ - INFO - Processing proposal: 2184271553351385856
+2025-03-01 00:30:43,776 - __main__ - INFO - Execution time for proposal 2184271553351385856: 2.15 seconds
+
+2025-03-01 00:30:43,776 - __main__ - INFO - Processing proposal: 2185842091785978624
+2025-03-01 00:30:45,515 - __main__ - INFO - Execution time for proposal 2185842091785978624: 1.74 seconds
+
+2025-03-01 00:30:45,515 - __main__ - INFO - Processing proposal: 2185844604283126528
+2025-03-01 00:30:46,948 - __main__ - INFO - Execution time for proposal 2185844604283126528: 1.43 seconds
+
+2025-03-01 00:30:46,948 - __main__ - INFO - Processing proposal: 2185845802830660352
+2025-03-01 00:30:48,999 - __main__ - INFO - Execution time for proposal 2185845802830660352: 2.05 seconds
+
+2025-03-01 00:30:49,000 - __main__ - INFO - Processing proposal: 2185846315039064832
+2025-03-01 00:30:50,532 - __main__ - INFO - Execution time for proposal 2185846315039064832: 1.53 seconds
+
+2025-03-01 00:30:50,532 - __main__ - INFO - Processing proposal: 2186438925994689280
+2025-03-01 00:30:52,225 - __main__ - INFO - Execution time for proposal 2186438925994689280: 1.69 seconds
+
+2025-03-01 00:30:52,226 - __main__ - INFO - Processing proposal: 2186443284254032640
+2025-03-01 00:30:52,471 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 00:30:54,741 - __main__ - ERROR - LLM invoke failed for proposal 2186443284254032640 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 00:31:14,998 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 00:31:17,248 - __main__ - ERROR - LLM invoke failed for proposal 2186443284254032640 (Attempt 2/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 00:31:39,481 - __main__ - INFO - Execution time for proposal 2186443284254032640: 47.26 seconds
+
+2025-03-01 00:31:39,481 - __main__ - INFO - Processing proposal: 2186467836912730880
+2025-03-01 00:31:41,327 - __main__ - INFO - Execution time for proposal 2186467836912730880: 1.85 seconds
+
+2025-03-01 00:31:41,327 - __main__ - INFO - Processing proposal: 2188433923833332480
+2025-03-01 00:31:43,476 - __main__ - INFO - Execution time for proposal 2188433923833332480: 2.15 seconds
+
+2025-03-01 00:31:43,476 - __main__ - INFO - Processing proposal: 2188525315913941760
+2025-03-01 00:31:45,421 - __main__ - INFO - Execution time for proposal 2188525315913941760: 1.94 seconds
+
+2025-03-01 00:31:45,421 - __main__ - INFO - Processing proposal: 2189264747189240576
+2025-03-01 00:31:47,366 - __main__ - INFO - Execution time for proposal 2189264747189240576: 1.95 seconds
+
+2025-03-01 00:31:47,367 - __main__ - INFO - Processing proposal: 2189388256229982976
+2025-03-01 00:31:49,415 - __main__ - INFO - Execution time for proposal 2189388256229982976: 2.05 seconds
+
+2025-03-01 00:31:49,415 - __main__ - INFO - Processing proposal: 2192450893792674560
+2025-03-01 00:31:51,768 - __main__ - INFO - Execution time for proposal 2192450893792674560: 2.35 seconds
+
+2025-03-01 00:31:51,769 - __main__ - INFO - Processing proposal: 2192916629635990272
+2025-03-01 00:31:53,224 - __main__ - INFO - Execution time for proposal 2192916629635990272: 1.46 seconds
+
+2025-03-01 00:31:53,225 - __main__ - INFO - Processing proposal: 2192921804903809792
+2025-03-01 00:31:54,948 - __main__ - INFO - Execution time for proposal 2192921804903809792: 1.72 seconds
+
+2025-03-01 00:31:54,948 - __main__ - INFO - Processing proposal: 2194950561579664128
+2025-03-01 00:31:54,229 - __main__ - INFO - Execution time for proposal 2194950561579664128: -0.72 seconds
+
+2025-03-01 00:31:54,230 - __main__ - INFO - Processing proposal: 2195629600740999936
+2025-03-01 00:31:54,989 - langsmith.client - WARNING - Failed to send compressed multipart ingest: langsmith.utils.LangSmithError: Failed to POST https://api.smith.langchain.com/runs/multipart in LangSmith API. HTTPError('400 Client Error: Bad Request for url: https://api.smith.langchain.com/runs/multipart', '{"error":"Bad request: invalid \'dotted_order\': dotted_order a9107261-8175-4798-918c-538a3dbad7c8 has timestamp 2025-02-28 16:31:54.227828 +0000 UTC earlier than parent timestamp 2025-02-28 16:31:54.95221 +0000 UTC for run_id:a9107261-8175-4798-918c-538a3dbad7c8 trace_id:812c594a-2227-4b2b-948e-be97d5e757ac dotted_order:20250228T163154952210Z812c594a-2227-4b2b-948e-be97d5e757ac.20250228T163154227828Za9107261-8175-4798-918c-538a3dbad7c8 parent_run_id:812c594a-2227-4b2b-948e-be97d5e757ac"}\n')
+2025-03-01 00:31:56,013 - __main__ - INFO - Execution time for proposal 2195629600740999936: 1.78 seconds
+
+2025-03-01 00:31:56,013 - __main__ - INFO - Processing proposal: 2195682525014131456
+2025-03-01 00:31:57,923 - __main__ - INFO - Execution time for proposal 2195682525014131456: 1.91 seconds
+
+2025-03-01 00:31:57,923 - __main__ - INFO - Processing proposal: 2195793247056429824
+2025-03-01 00:32:00,174 - __main__ - INFO - Execution time for proposal 2195793247056429824: 2.25 seconds
+
+2025-03-01 00:32:00,174 - __main__ - INFO - Processing proposal: 2197219917860700928
+2025-03-01 00:32:02,126 - __main__ - INFO - Execution time for proposal 2197219917860700928: 1.95 seconds
+
+2025-03-01 00:32:02,126 - __main__ - INFO - Processing proposal: 2197262136667800320
+2025-03-01 00:32:03,785 - __main__ - INFO - Execution time for proposal 2197262136667800320: 1.66 seconds
+
+2025-03-01 00:32:03,786 - __main__ - INFO - Processing proposal: 2197952451796009728
+2025-03-01 00:32:05,376 - __main__ - INFO - Execution time for proposal 2197952451796009728: 1.59 seconds
+
+2025-03-01 00:32:05,376 - __main__ - INFO - Processing proposal: 2198581276154266368
+2025-03-01 00:32:05,599 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 00:32:07,828 - __main__ - ERROR - LLM invoke failed for proposal 2198581276154266368 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 00:32:29,975 - __main__ - INFO - Execution time for proposal 2198581276154266368: 24.60 seconds
+
+2025-03-01 00:32:29,975 - __main__ - INFO - Processing proposal: 2201589261063422720
+2025-03-01 00:32:32,293 - __main__ - INFO - Execution time for proposal 2201589261063422720: 2.32 seconds
+
+2025-03-01 00:32:32,293 - __main__ - INFO - Processing proposal: 2201815482904871680
+2025-03-01 00:32:34,072 - __main__ - INFO - Execution time for proposal 2201815482904871680: 1.78 seconds
+
+2025-03-01 00:32:34,073 - __main__ - INFO - Processing proposal: 2202583607111844608
+2025-03-01 00:32:36,070 - __main__ - INFO - Execution time for proposal 2202583607111844608: 2.00 seconds
+
+2025-03-01 00:32:36,070 - __main__ - INFO - Processing proposal: 2202977686752592640
+2025-03-01 00:32:38,391 - __main__ - INFO - Execution time for proposal 2202977686752592640: 2.32 seconds
+
+2025-03-01 00:32:38,392 - __main__ - INFO - Processing proposal: 2203075043099935488
+2025-03-01 00:32:40,316 - __main__ - INFO - Execution time for proposal 2203075043099935488: 1.92 seconds
+
+2025-03-01 00:32:40,317 - __main__ - INFO - Processing proposal: 2204392707969778432
+2025-03-01 00:32:42,164 - __main__ - INFO - Execution time for proposal 2204392707969778432: 1.85 seconds
+
+2025-03-01 00:32:42,164 - __main__ - INFO - Processing proposal: 2205027665625219840
+2025-03-01 00:32:44,003 - __main__ - INFO - Execution time for proposal 2205027665625219840: 1.84 seconds
+
+2025-03-01 00:32:44,003 - __main__ - INFO - Processing proposal: 2205136900467983104
+2025-03-01 00:32:46,006 - __main__ - INFO - Execution time for proposal 2205136900467983104: 2.00 seconds
+
+2025-03-01 00:32:46,006 - __main__ - INFO - Processing proposal: 2205248731861746432
+2025-03-01 00:32:48,203 - __main__ - INFO - Execution time for proposal 2205248731861746432: 2.20 seconds
+
+2025-03-01 00:32:48,204 - __main__ - INFO - Processing proposal: 2205337041422516992
+2025-03-01 00:32:49,978 - __main__ - INFO - Execution time for proposal 2205337041422516992: 1.77 seconds
+
+2025-03-01 00:32:49,978 - __main__ - INFO - Processing proposal: 2206153743848702720
+2025-03-01 00:32:51,583 - __main__ - INFO - Execution time for proposal 2206153743848702720: 1.60 seconds
+
+2025-03-01 00:32:51,583 - __main__ - INFO - Processing proposal: 2206556565719220992
+2025-03-01 00:32:53,730 - __main__ - INFO - Execution time for proposal 2206556565719220992: 2.15 seconds
+
+2025-03-01 00:32:53,730 - __main__ - INFO - Processing proposal: 2206896476334850816
+2025-03-01 00:32:56,242 - __main__ - INFO - Execution time for proposal 2206896476334850816: 2.51 seconds
+
+2025-03-01 00:32:56,243 - __main__ - INFO - Processing proposal: 2206984221174530816
+2025-03-01 00:32:58,033 - __main__ - INFO - Execution time for proposal 2206984221174530816: 1.79 seconds
+
+2025-03-01 00:32:58,033 - __main__ - INFO - Processing proposal: 2207288307711214336
+2025-03-01 00:33:00,490 - __main__ - INFO - Execution time for proposal 2207288307711214336: 2.46 seconds
+
+2025-03-01 00:33:00,490 - __main__ - INFO - Processing proposal: 2208409881428361984
+2025-03-01 00:33:00,794 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 00:33:03,041 - __main__ - ERROR - LLM invoke failed for proposal 2208409881428361984 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 07:45:55,143 - src.main - INFO - Running LLM review
+2025-03-01 07:45:55,143 - src.main - INFO - Running simple prompt review with output to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 07:45:55,143 - src.llm_review - INFO - Loading proposal data from /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/data/pycon_2024_proposal.xlsx
+2025-03-01 07:45:55,395 - src.llm_review - INFO - Setting up LLM chain with prompt /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/prompt/simple_prompt.txt and model gemini-2.0-flash
+2025-03-01 07:45:55,456 - src.llm_review - INFO - Processing proposal: 2178936233474917120
+2025-03-01 07:45:58,179 - src.llm_review - INFO - Execution time for proposal 2178936233474917120: 2.72 seconds
+
+2025-03-01 07:45:58,179 - src.llm_review - INFO - Processing proposal: 2178979854999880448
+2025-03-01 07:46:00,023 - src.llm_review - INFO - Execution time for proposal 2178979854999880448: 1.84 seconds
+
+2025-03-01 07:46:00,023 - src.llm_review - INFO - Processing proposal: 2178981707884004096
+2025-03-01 07:46:01,789 - src.llm_review - INFO - Execution time for proposal 2178981707884004096: 1.77 seconds
+
+2025-03-01 07:46:01,789 - src.llm_review - INFO - Processing proposal: 2179613228097602304
+2025-03-01 07:46:03,853 - src.llm_review - INFO - Execution time for proposal 2179613228097602304: 2.06 seconds
+
+2025-03-01 07:46:03,853 - src.llm_review - INFO - Processing proposal: 2180814504890204928
+2025-03-01 07:46:06,370 - src.llm_review - INFO - Execution time for proposal 2180814504890204928: 2.52 seconds
+
+2025-03-01 07:46:06,370 - src.llm_review - INFO - Processing proposal: 2181661100230050560
+2025-03-01 07:46:08,232 - src.llm_review - INFO - Execution time for proposal 2181661100230050560: 1.86 seconds
+
+2025-03-01 07:46:08,233 - src.llm_review - INFO - Processing proposal: 2181767915890541312
+2025-03-01 07:46:10,771 - src.llm_review - INFO - Execution time for proposal 2181767915890541312: 2.54 seconds
+
+2025-03-01 07:46:10,771 - src.llm_review - INFO - Processing proposal: 2183455404749488896
+2025-03-01 07:46:12,410 - src.llm_review - INFO - Execution time for proposal 2183455404749488896: 1.64 seconds
+
+2025-03-01 07:46:12,410 - src.llm_review - INFO - Processing proposal: 2184258951825064704
+2025-03-01 07:46:14,353 - src.llm_review - INFO - Execution time for proposal 2184258951825064704: 1.94 seconds
+
+2025-03-01 07:46:14,353 - src.llm_review - INFO - Processing proposal: 2184265081062163200
+2025-03-01 07:46:16,351 - src.llm_review - INFO - Execution time for proposal 2184265081062163200: 2.00 seconds
+
+2025-03-01 07:46:16,354 - src.llm_review - INFO - Processing proposal: 2184271553351385856
+2025-03-01 07:46:18,550 - src.llm_review - INFO - Execution time for proposal 2184271553351385856: 2.20 seconds
+
+2025-03-01 07:46:18,550 - src.llm_review - INFO - Processing proposal: 2185842091785978624
+2025-03-01 07:46:19,978 - src.llm_review - INFO - Execution time for proposal 2185842091785978624: 1.43 seconds
+
+2025-03-01 07:46:19,978 - src.llm_review - INFO - Processing proposal: 2185844604283126528
+2025-03-01 07:46:21,829 - src.llm_review - INFO - Execution time for proposal 2185844604283126528: 1.85 seconds
+
+2025-03-01 07:46:21,830 - src.llm_review - INFO - Processing proposal: 2185845802830660352
+2025-03-01 07:46:23,703 - src.llm_review - INFO - Execution time for proposal 2185845802830660352: 1.87 seconds
+
+2025-03-01 07:46:23,703 - src.llm_review - INFO - Processing proposal: 2185846315039064832
+2025-03-01 07:46:25,413 - src.llm_review - INFO - Execution time for proposal 2185846315039064832: 1.71 seconds
+
+2025-03-01 07:46:25,414 - src.llm_review - INFO - Processing proposal: 2186438925994689280
+2025-03-01 07:46:27,237 - src.llm_review - INFO - Execution time for proposal 2186438925994689280: 1.82 seconds
+
+2025-03-01 07:46:27,238 - src.llm_review - INFO - Processing proposal: 2186443284254032640
+2025-03-01 07:46:27,480 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 07:46:29,828 - src.llm_review - ERROR - LLM invoke failed for proposal 2186443284254032640 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 07:46:50,090 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 07:46:52,334 - src.llm_review - ERROR - LLM invoke failed for proposal 2186443284254032640 (Attempt 2/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 07:47:15,280 - src.main - INFO - Running data merge and analysis
+2025-03-01 07:47:15,281 - src.merge_data - INFO - Loading data files
+2025-03-01 07:47:15,684 - src.merge_data - INFO - Calculating vote statistics
+2025-03-01 07:47:15,718 - src.merge_data - INFO - Merging data
+2025-03-01 07:47:15,726 - src.merge_data - INFO - Saving merged data to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 07:47:15,919 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 07:47:15,919 - src.merge_data - ERROR - Required columns not found: LLM_vote or vote_most_common_vote
+2025-03-01 07:47:15,921 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 07:47:15,921 - src.merge_data - ERROR - Required columns not found: LLM_vote or vote_most_common_vote
+2025-03-01 07:47:15,922 - src.main - INFO - Merged data saved to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:04:46,429 - src.main - INFO - Running LLM review
+2025-03-01 08:04:46,429 - src.main - INFO - Running simple prompt review with output to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:04:46,429 - src.llm_review - INFO - Loading proposal data from /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/data/pycon_2024_proposal.xlsx
+2025-03-01 08:04:46,643 - src.llm_review - INFO - Setting up LLM chain with prompt /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/prompt/simple_prompt.txt and model gemini-2.0-flash
+2025-03-01 08:04:46,675 - src.llm_review - INFO - Processing proposal: 2178936233474917120
+2025-03-01 08:04:49,435 - src.llm_review - INFO - Execution time for proposal 2178936233474917120: 2.76 seconds
+
+2025-03-01 08:04:49,436 - src.llm_review - INFO - Processing proposal: 2178979854999880448
+2025-03-01 08:04:51,350 - src.llm_review - INFO - Execution time for proposal 2178979854999880448: 1.91 seconds
+
+2025-03-01 08:04:51,350 - src.llm_review - INFO - Processing proposal: 2178981707884004096
+2025-03-01 08:04:53,094 - src.llm_review - INFO - Execution time for proposal 2178981707884004096: 1.74 seconds
+
+2025-03-01 08:04:53,094 - src.llm_review - INFO - Processing proposal: 2179613228097602304
+2025-03-01 08:04:55,241 - src.llm_review - INFO - Execution time for proposal 2179613228097602304: 2.15 seconds
+
+2025-03-01 08:04:55,241 - src.llm_review - INFO - Processing proposal: 2180814504890204928
+2025-03-01 08:04:57,391 - src.llm_review - INFO - Execution time for proposal 2180814504890204928: 2.15 seconds
+
+2025-03-01 08:04:57,392 - src.llm_review - INFO - Processing proposal: 2181661100230050560
+2025-03-01 08:04:59,030 - src.llm_review - INFO - Execution time for proposal 2181661100230050560: 1.64 seconds
+
+2025-03-01 08:04:59,030 - src.llm_review - INFO - Processing proposal: 2181767915890541312
+2025-03-01 08:05:01,182 - src.llm_review - INFO - Execution time for proposal 2181767915890541312: 2.15 seconds
+
+2025-03-01 08:05:01,182 - src.llm_review - INFO - Processing proposal: 2183455404749488896
+2025-03-01 08:05:02,819 - src.llm_review - INFO - Execution time for proposal 2183455404749488896: 1.64 seconds
+
+2025-03-01 08:05:02,819 - src.llm_review - INFO - Processing proposal: 2184258951825064704
+2025-03-01 08:05:04,668 - src.llm_review - INFO - Execution time for proposal 2184258951825064704: 1.85 seconds
+
+2025-03-01 08:05:04,668 - src.llm_review - INFO - Processing proposal: 2184265081062163200
+2025-03-01 08:05:06,463 - src.llm_review - INFO - Execution time for proposal 2184265081062163200: 1.79 seconds
+
+2025-03-01 08:05:06,463 - src.llm_review - INFO - Processing proposal: 2184271553351385856
+2025-03-01 08:05:08,658 - src.llm_review - INFO - Execution time for proposal 2184271553351385856: 2.19 seconds
+
+2025-03-01 08:05:08,658 - src.llm_review - INFO - Processing proposal: 2185842091785978624
+2025-03-01 08:05:10,601 - src.llm_review - INFO - Execution time for proposal 2185842091785978624: 1.94 seconds
+
+2025-03-01 08:05:10,601 - src.llm_review - INFO - Processing proposal: 2185844604283126528
+2025-03-01 08:05:12,036 - src.llm_review - INFO - Execution time for proposal 2185844604283126528: 1.43 seconds
+
+2025-03-01 08:05:12,036 - src.llm_review - INFO - Processing proposal: 2185845802830660352
+2025-03-01 08:05:14,083 - src.llm_review - INFO - Execution time for proposal 2185845802830660352: 2.05 seconds
+
+2025-03-01 08:05:14,083 - src.llm_review - INFO - Processing proposal: 2185846315039064832
+2025-03-01 08:05:15,621 - src.llm_review - INFO - Execution time for proposal 2185846315039064832: 1.54 seconds
+
+2025-03-01 08:05:15,621 - src.llm_review - INFO - Processing proposal: 2186438925994689280
+2025-03-01 08:05:17,450 - src.llm_review - INFO - Execution time for proposal 2186438925994689280: 1.83 seconds
+
+2025-03-01 08:05:17,451 - src.llm_review - INFO - Processing proposal: 2186443284254032640
+2025-03-01 08:05:17,688 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:05:19,934 - src.llm_review - ERROR - LLM invoke failed for proposal 2186443284254032640 (Attempt 1/3): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:05:52,077 - src.llm_review - INFO - Execution time for proposal 2186443284254032640: 34.63 seconds
+
+2025-03-01 08:05:52,078 - src.llm_review - INFO - Processing proposal: 2186467836912730880
+2025-03-01 08:05:53,806 - src.llm_review - INFO - Execution time for proposal 2186467836912730880: 1.73 seconds
+
+2025-03-01 08:05:53,806 - src.llm_review - INFO - Processing proposal: 2188433923833332480
+2025-03-01 08:05:55,765 - src.llm_review - INFO - Execution time for proposal 2188433923833332480: 1.96 seconds
+
+2025-03-01 08:05:55,765 - src.llm_review - INFO - Processing proposal: 2188525315913941760
+2025-03-01 08:05:57,713 - src.llm_review - INFO - Execution time for proposal 2188525315913941760: 1.95 seconds
+
+2025-03-01 08:05:57,713 - src.llm_review - INFO - Processing proposal: 2189264747189240576
+2025-03-01 08:05:59,653 - src.llm_review - INFO - Execution time for proposal 2189264747189240576: 1.94 seconds
+
+2025-03-01 08:05:59,653 - src.llm_review - INFO - Processing proposal: 2189388256229982976
+2025-03-01 08:06:01,699 - src.llm_review - INFO - Execution time for proposal 2189388256229982976: 2.05 seconds
+
+2025-03-01 08:06:01,699 - src.llm_review - INFO - Processing proposal: 2192450893792674560
+2025-03-01 08:06:03,957 - src.llm_review - INFO - Execution time for proposal 2192450893792674560: 2.26 seconds
+
+2025-03-01 08:06:03,957 - src.llm_review - INFO - Processing proposal: 2192916629635990272
+2025-03-01 08:06:05,490 - src.llm_review - INFO - Execution time for proposal 2192916629635990272: 1.53 seconds
+
+2025-03-01 08:06:05,490 - src.llm_review - INFO - Processing proposal: 2192921804903809792
+2025-03-01 08:06:07,228 - src.llm_review - INFO - Execution time for proposal 2192921804903809792: 1.74 seconds
+
+2025-03-01 08:06:07,228 - src.llm_review - INFO - Processing proposal: 2194950561579664128
+2025-03-01 08:06:09,283 - src.llm_review - INFO - Execution time for proposal 2194950561579664128: 2.05 seconds
+
+2025-03-01 08:06:09,288 - src.llm_review - INFO - Processing proposal: 2195629600740999936
+2025-03-01 08:06:11,195 - src.llm_review - INFO - Execution time for proposal 2195629600740999936: 1.91 seconds
+
+2025-03-01 08:06:11,195 - src.llm_review - INFO - Processing proposal: 2195682525014131456
+2025-03-01 08:06:13,168 - src.llm_review - INFO - Execution time for proposal 2195682525014131456: 1.97 seconds
+
+2025-03-01 08:06:13,169 - src.llm_review - INFO - Processing proposal: 2195793247056429824
+2025-03-01 08:06:15,499 - src.llm_review - INFO - Execution time for proposal 2195793247056429824: 2.33 seconds
+
+2025-03-01 08:06:15,499 - src.llm_review - INFO - Processing proposal: 2197219917860700928
+2025-03-01 08:06:17,617 - src.llm_review - INFO - Execution time for proposal 2197219917860700928: 2.12 seconds
+
+2025-03-01 08:06:17,618 - src.llm_review - INFO - Processing proposal: 2197262136667800320
+2025-03-01 08:06:19,371 - src.llm_review - INFO - Execution time for proposal 2197262136667800320: 1.75 seconds
+
+2025-03-01 08:06:19,372 - src.llm_review - INFO - Processing proposal: 2197952451796009728
+2025-03-01 08:06:21,158 - src.llm_review - INFO - Execution time for proposal 2197952451796009728: 1.79 seconds
+
+2025-03-01 08:06:21,158 - src.llm_review - INFO - Processing proposal: 2198581276154266368
+2025-03-01 08:06:21,379 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:06:23,597 - src.llm_review - ERROR - LLM invoke failed for proposal 2198581276154266368 (Attempt 1/3): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:07:48,990 - src.main - INFO - Running LLM review
+2025-03-01 08:07:48,991 - src.main - INFO - Running simple prompt review with output to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:07:48,991 - src.llm_review - INFO - Loading proposal data from /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/data/pycon_2024_proposal.xlsx
+2025-03-01 08:07:49,181 - src.llm_review - INFO - Limiting to 5 proposals
+2025-03-01 08:07:49,181 - src.llm_review - INFO - Setting up LLM chain with prompt /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/prompt/simple_prompt.txt and model gemini-2.0-flash
+2025-03-01 08:07:49,206 - src.llm_review - INFO - Processing proposal: 2178936233474917120
+2025-03-01 08:07:51,372 - src.llm_review - INFO - Execution time for proposal 2178936233474917120: 2.17 seconds
+
+2025-03-01 08:07:51,372 - src.llm_review - INFO - Processing proposal: 2178979854999880448
+2025-03-01 08:07:53,317 - src.llm_review - INFO - Execution time for proposal 2178979854999880448: 1.94 seconds
+
+2025-03-01 08:07:53,317 - src.llm_review - INFO - Processing proposal: 2178981707884004096
+2025-03-01 08:07:54,998 - src.llm_review - INFO - Execution time for proposal 2178981707884004096: 1.68 seconds
+
+2025-03-01 08:07:54,998 - src.llm_review - INFO - Processing proposal: 2179613228097602304
+2025-03-01 08:07:56,888 - src.llm_review - INFO - Execution time for proposal 2179613228097602304: 1.89 seconds
+
+2025-03-01 08:07:56,888 - src.llm_review - INFO - Processing proposal: 2180814504890204928
+2025-03-01 08:07:59,565 - src.llm_review - INFO - Execution time for proposal 2180814504890204928: 2.68 seconds
+
+2025-03-01 08:07:59,565 - src.llm_review - INFO - Saving 5 results to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:07:59,584 - src.llm_review - INFO - Results saved to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:08:14,148 - src.main - INFO - Running LLM review
+2025-03-01 08:08:14,149 - src.main - INFO - Running complete prompt review with output to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:08:14,149 - src.llm_review - INFO - Loading proposal data from /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/data/pycon_2024_proposal.xlsx
+2025-03-01 08:08:14,334 - src.llm_review - INFO - Limiting to 5 proposals
+2025-03-01 08:08:14,334 - src.llm_review - INFO - Setting up LLM chain with prompt /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/prompt/full_prompt.txt and model gemini-2.0-flash
+2025-03-01 08:08:14,359 - src.llm_review - INFO - Processing proposal: 2178936233474917120
+2025-03-01 08:08:18,186 - src.llm_review - INFO - Execution time for proposal 2178936233474917120: 3.83 seconds
+
+2025-03-01 08:08:18,187 - src.llm_review - INFO - Processing proposal: 2178979854999880448
+2025-03-01 08:08:20,515 - src.llm_review - INFO - Execution time for proposal 2178979854999880448: 2.33 seconds
+
+2025-03-01 08:08:20,515 - src.llm_review - INFO - Processing proposal: 2178981707884004096
+2025-03-01 08:08:23,014 - src.llm_review - INFO - Execution time for proposal 2178981707884004096: 2.50 seconds
+
+2025-03-01 08:08:23,015 - src.llm_review - INFO - Processing proposal: 2179613228097602304
+2025-03-01 08:08:25,267 - src.llm_review - INFO - Execution time for proposal 2179613228097602304: 2.25 seconds
+
+2025-03-01 08:08:25,267 - src.llm_review - INFO - Processing proposal: 2180814504890204928
+2025-03-01 08:08:27,621 - src.llm_review - INFO - Execution time for proposal 2180814504890204928: 2.35 seconds
+
+2025-03-01 08:08:27,621 - src.llm_review - INFO - Saving 5 results to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:08:27,641 - src.llm_review - INFO - Results saved to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:08:41,617 - src.main - INFO - Running LLM review
+2025-03-01 08:08:41,617 - src.main - INFO - Running simple prompt review with output to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:08:41,617 - src.llm_review - INFO - Loading proposal data from /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/data/pycon_2024_proposal.xlsx
+2025-03-01 08:08:41,798 - src.llm_review - INFO - Limiting to 3 proposals
+2025-03-01 08:08:41,799 - src.llm_review - INFO - Setting up LLM chain with prompt /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/prompt/simple_prompt.txt and model gemini-2.0-flash
+2025-03-01 08:08:41,821 - src.llm_review - INFO - Processing proposal: 2178936233474917120
+2025-03-01 08:08:44,723 - src.llm_review - INFO - Execution time for proposal 2178936233474917120: 2.90 seconds
+
+2025-03-01 08:08:44,723 - src.llm_review - INFO - Processing proposal: 2178979854999880448
+2025-03-01 08:08:46,669 - src.llm_review - INFO - Execution time for proposal 2178979854999880448: 1.95 seconds
+
+2025-03-01 08:08:46,669 - src.llm_review - INFO - Processing proposal: 2178981707884004096
+2025-03-01 08:08:48,311 - src.llm_review - INFO - Execution time for proposal 2178981707884004096: 1.64 seconds
+
+2025-03-01 08:08:48,311 - src.llm_review - INFO - Saving 3 results to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:08:48,332 - src.llm_review - INFO - Results saved to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:08:48,333 - src.main - INFO - Running complete prompt review with output to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:08:48,333 - src.llm_review - INFO - Loading proposal data from /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/data/pycon_2024_proposal.xlsx
+2025-03-01 08:08:48,374 - src.llm_review - INFO - Limiting to 3 proposals
+2025-03-01 08:08:48,375 - src.llm_review - INFO - Setting up LLM chain with prompt /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/prompt/full_prompt.txt and model gemini-2.0-flash
+2025-03-01 08:08:48,379 - src.llm_review - INFO - Processing proposal: 2178936233474917120
+2025-03-01 08:08:51,492 - src.llm_review - INFO - Execution time for proposal 2178936233474917120: 3.11 seconds
+
+2025-03-01 08:08:51,492 - src.llm_review - INFO - Processing proposal: 2178979854999880448
+2025-03-01 08:08:53,630 - src.llm_review - INFO - Execution time for proposal 2178979854999880448: 2.14 seconds
+
+2025-03-01 08:08:53,631 - src.llm_review - INFO - Processing proposal: 2178981707884004096
+2025-03-01 08:08:56,086 - src.llm_review - INFO - Execution time for proposal 2178981707884004096: 2.46 seconds
+
+2025-03-01 08:08:56,086 - src.llm_review - INFO - Saving 3 results to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:08:56,096 - src.llm_review - INFO - Results saved to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:09:04,891 - src.main - INFO - Running LLM review
+2025-03-01 08:09:04,892 - src.main - INFO - Running simple prompt review with output to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:09:04,892 - src.llm_review - INFO - Loading proposal data from /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/data/pycon_2024_proposal.xlsx
+2025-03-01 08:09:05,199 - src.llm_review - INFO - Limiting to 3 proposals
+2025-03-01 08:09:05,199 - src.llm_review - INFO - Setting up LLM chain with prompt /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/prompt/simple_prompt.txt and model gemini-2.0-flash
+2025-03-01 08:09:05,222 - src.llm_review - INFO - Processing proposal: 2178936233474917120
+2025-03-01 08:09:08,277 - src.llm_review - INFO - Execution time for proposal 2178936233474917120: 3.05 seconds
+
+2025-03-01 08:09:08,277 - src.llm_review - INFO - Processing proposal: 2178979854999880448
+2025-03-01 08:09:10,119 - src.llm_review - INFO - Execution time for proposal 2178979854999880448: 1.84 seconds
+
+2025-03-01 08:09:10,119 - src.llm_review - INFO - Processing proposal: 2178981707884004096
+2025-03-01 08:09:11,963 - src.llm_review - INFO - Execution time for proposal 2178981707884004096: 1.84 seconds
+
+2025-03-01 08:09:11,963 - src.llm_review - INFO - Saving 3 results to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:09:11,983 - src.llm_review - INFO - Results saved to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:09:11,984 - src.main - INFO - Running complete prompt review with output to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:09:11,984 - src.llm_review - INFO - Loading proposal data from /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/data/pycon_2024_proposal.xlsx
+2025-03-01 08:09:12,025 - src.llm_review - INFO - Limiting to 3 proposals
+2025-03-01 08:09:12,026 - src.llm_review - INFO - Setting up LLM chain with prompt /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/prompt/full_prompt.txt and model gemini-2.0-flash
+2025-03-01 08:09:12,030 - src.llm_review - INFO - Processing proposal: 2178936233474917120
+2025-03-01 08:09:15,260 - src.llm_review - INFO - Execution time for proposal 2178936233474917120: 3.23 seconds
+
+2025-03-01 08:09:15,260 - src.llm_review - INFO - Processing proposal: 2178979854999880448
+2025-03-01 08:09:17,330 - src.llm_review - INFO - Execution time for proposal 2178979854999880448: 2.07 seconds
+
+2025-03-01 08:09:17,330 - src.llm_review - INFO - Processing proposal: 2178981707884004096
+2025-03-01 08:09:19,744 - src.llm_review - INFO - Execution time for proposal 2178981707884004096: 2.41 seconds
+
+2025-03-01 08:09:19,744 - src.llm_review - INFO - Saving 3 results to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:09:19,757 - src.llm_review - INFO - Results saved to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:09:19,758 - src.main - INFO - Running data merge and analysis
+2025-03-01 08:09:19,758 - src.merge_data - INFO - Loading data files
+2025-03-01 08:09:20,001 - src.merge_data - INFO - Calculating vote statistics
+2025-03-01 08:09:20,033 - src.merge_data - INFO - Merging data
+2025-03-01 08:09:20,043 - src.merge_data - INFO - Saving merged data to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:09:20,151 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:09:20,152 - src.merge_data - ERROR - Required columns not found: LLM_vote or vote_most_common_vote
+2025-03-01 08:09:20,153 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:09:20,153 - src.merge_data - ERROR - Required columns not found: LLM_vote or vote_most_common_vote
+2025-03-01 08:09:20,153 - src.main - INFO - Merged data saved to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:16:52,829 - src.main - INFO - Running LLM review
+2025-03-01 08:16:52,830 - src.main - INFO - Running simple prompt review with output to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:16:52,830 - src.llm_review - INFO - Loading proposal data from /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/data/pycon_2024_proposal.xlsx
+2025-03-01 08:16:53,016 - src.llm_review - INFO - Setting up LLM chain with prompt /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/prompt/simple_prompt.txt and model gemini-2.0-flash
+2025-03-01 08:16:53,040 - src.llm_review - INFO - Processing proposal: 2178936233474917120
+2025-03-01 08:16:55,141 - src.llm_review - INFO - Execution time for proposal 2178936233474917120: 2.10 seconds
+
+2025-03-01 08:16:55,141 - src.llm_review - INFO - Processing proposal: 2178979854999880448
+2025-03-01 08:16:57,180 - src.llm_review - INFO - Execution time for proposal 2178979854999880448: 2.04 seconds
+
+2025-03-01 08:16:57,180 - src.llm_review - INFO - Processing proposal: 2178981707884004096
+2025-03-01 08:16:58,917 - src.llm_review - INFO - Execution time for proposal 2178981707884004096: 1.74 seconds
+
+2025-03-01 08:16:58,917 - src.llm_review - INFO - Processing proposal: 2179613228097602304
+2025-03-01 08:17:01,068 - src.llm_review - INFO - Execution time for proposal 2179613228097602304: 2.15 seconds
+
+2025-03-01 08:17:01,069 - src.llm_review - INFO - Processing proposal: 2180814504890204928
+2025-03-01 08:17:03,321 - src.llm_review - INFO - Execution time for proposal 2180814504890204928: 2.25 seconds
+
+2025-03-01 08:17:03,322 - src.llm_review - INFO - Processing proposal: 2181661100230050560
+2025-03-01 08:17:04,959 - src.llm_review - INFO - Execution time for proposal 2181661100230050560: 1.64 seconds
+
+2025-03-01 08:17:04,959 - src.llm_review - INFO - Processing proposal: 2181767915890541312
+2025-03-01 08:17:07,158 - src.llm_review - INFO - Execution time for proposal 2181767915890541312: 2.20 seconds
+
+2025-03-01 08:17:07,159 - src.llm_review - INFO - Processing proposal: 2183455404749488896
+2025-03-01 08:17:08,673 - src.llm_review - INFO - Execution time for proposal 2183455404749488896: 1.51 seconds
+
+2025-03-01 08:17:08,673 - src.llm_review - INFO - Processing proposal: 2184258951825064704
+2025-03-01 08:17:10,485 - src.llm_review - INFO - Execution time for proposal 2184258951825064704: 1.81 seconds
+
+2025-03-01 08:17:10,486 - src.llm_review - INFO - Processing proposal: 2184265081062163200
+2025-03-01 08:17:12,128 - src.llm_review - INFO - Execution time for proposal 2184265081062163200: 1.64 seconds
+
+2025-03-01 08:17:12,129 - src.llm_review - INFO - Processing proposal: 2184271553351385856
+2025-03-01 08:17:14,234 - src.llm_review - INFO - Execution time for proposal 2184271553351385856: 2.10 seconds
+
+2025-03-01 08:17:14,234 - src.llm_review - INFO - Processing proposal: 2185842091785978624
+2025-03-01 08:17:15,708 - src.llm_review - INFO - Execution time for proposal 2185842091785978624: 1.47 seconds
+
+2025-03-01 08:17:15,709 - src.llm_review - INFO - Processing proposal: 2185844604283126528
+2025-03-01 08:17:17,298 - src.llm_review - INFO - Execution time for proposal 2185844604283126528: 1.59 seconds
+
+2025-03-01 08:17:17,298 - src.llm_review - INFO - Processing proposal: 2185845802830660352
+2025-03-01 08:17:19,456 - src.llm_review - INFO - Execution time for proposal 2185845802830660352: 2.16 seconds
+
+2025-03-01 08:17:19,456 - src.llm_review - INFO - Processing proposal: 2185846315039064832
+2025-03-01 08:17:20,893 - src.llm_review - INFO - Execution time for proposal 2185846315039064832: 1.44 seconds
+
+2025-03-01 08:17:20,894 - src.llm_review - INFO - Processing proposal: 2186438925994689280
+2025-03-01 08:17:22,668 - src.llm_review - INFO - Execution time for proposal 2186438925994689280: 1.77 seconds
+
+2025-03-01 08:17:22,668 - src.llm_review - INFO - Processing proposal: 2186443284254032640
+2025-03-01 08:17:22,978 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:17:25,238 - src.llm_review - ERROR - LLM invoke failed for proposal 2186443284254032640 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:17:45,504 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:17:47,733 - src.llm_review - ERROR - LLM invoke failed for proposal 2186443284254032640 (Attempt 2/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:18:09,883 - src.llm_review - INFO - Execution time for proposal 2186443284254032640: 47.22 seconds
+
+2025-03-01 08:18:09,883 - src.llm_review - INFO - Processing proposal: 2186467836912730880
+2025-03-01 08:18:11,724 - src.llm_review - INFO - Execution time for proposal 2186467836912730880: 1.84 seconds
+
+2025-03-01 08:18:11,724 - src.llm_review - INFO - Processing proposal: 2188433923833332480
+2025-03-01 08:18:13,672 - src.llm_review - INFO - Execution time for proposal 2188433923833332480: 1.95 seconds
+
+2025-03-01 08:18:13,673 - src.llm_review - INFO - Processing proposal: 2188525315913941760
+2025-03-01 08:18:15,411 - src.llm_review - INFO - Execution time for proposal 2188525315913941760: 1.74 seconds
+
+2025-03-01 08:18:15,411 - src.llm_review - INFO - Processing proposal: 2189264747189240576
+2025-03-01 08:18:17,214 - src.llm_review - INFO - Execution time for proposal 2189264747189240576: 1.80 seconds
+
+2025-03-01 08:18:17,214 - src.llm_review - INFO - Processing proposal: 2189388256229982976
+2025-03-01 08:18:19,279 - src.llm_review - INFO - Execution time for proposal 2189388256229982976: 2.07 seconds
+
+2025-03-01 08:18:19,280 - src.llm_review - INFO - Processing proposal: 2192450893792674560
+2025-03-01 08:18:21,456 - src.llm_review - INFO - Execution time for proposal 2192450893792674560: 2.18 seconds
+
+2025-03-01 08:18:21,456 - src.llm_review - INFO - Processing proposal: 2192916629635990272
+2025-03-01 08:18:22,888 - src.llm_review - INFO - Execution time for proposal 2192916629635990272: 1.43 seconds
+
+2025-03-01 08:18:22,889 - src.llm_review - INFO - Processing proposal: 2192921804903809792
+2025-03-01 08:18:24,461 - src.llm_review - INFO - Execution time for proposal 2192921804903809792: 1.57 seconds
+
+2025-03-01 08:18:24,462 - src.llm_review - INFO - Processing proposal: 2194950561579664128
+2025-03-01 08:18:26,267 - src.llm_review - INFO - Execution time for proposal 2194950561579664128: 1.81 seconds
+
+2025-03-01 08:18:26,267 - src.llm_review - INFO - Processing proposal: 2195629600740999936
+2025-03-01 08:18:28,007 - src.llm_review - INFO - Execution time for proposal 2195629600740999936: 1.74 seconds
+
+2025-03-01 08:18:28,007 - src.llm_review - INFO - Processing proposal: 2195682525014131456
+2025-03-01 08:18:29,701 - src.llm_review - INFO - Execution time for proposal 2195682525014131456: 1.69 seconds
+
+2025-03-01 08:18:29,701 - src.llm_review - INFO - Processing proposal: 2195793247056429824
+2025-03-01 08:18:32,002 - src.llm_review - INFO - Execution time for proposal 2195793247056429824: 2.30 seconds
+
+2025-03-01 08:18:32,002 - src.llm_review - INFO - Processing proposal: 2197219917860700928
+2025-03-01 08:18:33,741 - src.llm_review - INFO - Execution time for proposal 2197219917860700928: 1.74 seconds
+
+2025-03-01 08:18:33,742 - src.llm_review - INFO - Processing proposal: 2197262136667800320
+2025-03-01 08:18:35,482 - src.llm_review - INFO - Execution time for proposal 2197262136667800320: 1.74 seconds
+
+2025-03-01 08:18:35,483 - src.llm_review - INFO - Processing proposal: 2197952451796009728
+2025-03-01 08:18:37,000 - src.llm_review - INFO - Execution time for proposal 2197952451796009728: 1.52 seconds
+
+2025-03-01 08:18:37,000 - src.llm_review - INFO - Processing proposal: 2198581276154266368
+2025-03-01 08:18:37,222 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:18:39,476 - src.llm_review - ERROR - LLM invoke failed for proposal 2198581276154266368 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:19:01,698 - src.llm_review - INFO - Execution time for proposal 2198581276154266368: 24.70 seconds
+
+2025-03-01 08:19:01,699 - src.llm_review - INFO - Processing proposal: 2201589261063422720
+2025-03-01 08:19:03,953 - src.llm_review - INFO - Execution time for proposal 2201589261063422720: 2.25 seconds
+
+2025-03-01 08:19:03,953 - src.llm_review - INFO - Processing proposal: 2201815482904871680
+2025-03-01 08:19:05,588 - src.llm_review - INFO - Execution time for proposal 2201815482904871680: 1.63 seconds
+
+2025-03-01 08:19:05,588 - src.llm_review - INFO - Processing proposal: 2202583607111844608
+2025-03-01 08:19:07,304 - src.llm_review - INFO - Execution time for proposal 2202583607111844608: 1.72 seconds
+
+2025-03-01 08:19:07,304 - src.llm_review - INFO - Processing proposal: 2202977686752592640
+2025-03-01 08:19:09,271 - src.llm_review - INFO - Execution time for proposal 2202977686752592640: 1.97 seconds
+
+2025-03-01 08:19:09,272 - src.llm_review - INFO - Processing proposal: 2203075043099935488
+2025-03-01 08:19:10,919 - src.llm_review - INFO - Execution time for proposal 2203075043099935488: 1.65 seconds
+
+2025-03-01 08:19:10,920 - src.llm_review - INFO - Processing proposal: 2204392707969778432
+2025-03-01 08:19:12,609 - src.llm_review - INFO - Execution time for proposal 2204392707969778432: 1.69 seconds
+
+2025-03-01 08:19:12,609 - src.llm_review - INFO - Processing proposal: 2205027665625219840
+2025-03-01 08:19:14,907 - src.llm_review - INFO - Execution time for proposal 2205027665625219840: 2.30 seconds
+
+2025-03-01 08:19:14,908 - src.llm_review - INFO - Processing proposal: 2205136900467983104
+2025-03-01 08:19:16,940 - src.llm_review - INFO - Execution time for proposal 2205136900467983104: 2.03 seconds
+
+2025-03-01 08:19:16,940 - src.llm_review - INFO - Processing proposal: 2205248731861746432
+2025-03-01 08:19:19,105 - src.llm_review - INFO - Execution time for proposal 2205248731861746432: 2.17 seconds
+
+2025-03-01 08:19:19,106 - src.llm_review - INFO - Processing proposal: 2205337041422516992
+2025-03-01 08:19:20,912 - src.llm_review - INFO - Execution time for proposal 2205337041422516992: 1.81 seconds
+
+2025-03-01 08:19:20,912 - src.llm_review - INFO - Processing proposal: 2206153743848702720
+2025-03-01 08:19:22,382 - src.llm_review - INFO - Execution time for proposal 2206153743848702720: 1.47 seconds
+
+2025-03-01 08:19:22,382 - src.llm_review - INFO - Processing proposal: 2206556565719220992
+2025-03-01 08:19:24,286 - src.llm_review - INFO - Execution time for proposal 2206556565719220992: 1.90 seconds
+
+2025-03-01 08:19:24,286 - src.llm_review - INFO - Processing proposal: 2206896476334850816
+2025-03-01 08:19:26,683 - src.llm_review - INFO - Execution time for proposal 2206896476334850816: 2.40 seconds
+
+2025-03-01 08:19:26,684 - src.llm_review - INFO - Processing proposal: 2206984221174530816
+2025-03-01 08:19:28,325 - src.llm_review - INFO - Execution time for proposal 2206984221174530816: 1.64 seconds
+
+2025-03-01 08:19:28,325 - src.llm_review - INFO - Processing proposal: 2207288307711214336
+2025-03-01 08:19:30,642 - src.llm_review - INFO - Execution time for proposal 2207288307711214336: 2.32 seconds
+
+2025-03-01 08:19:30,642 - src.llm_review - INFO - Processing proposal: 2208409881428361984
+2025-03-01 08:19:30,978 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:19:33,238 - src.llm_review - ERROR - LLM invoke failed for proposal 2208409881428361984 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:19:55,021 - src.llm_review - INFO - Execution time for proposal 2208409881428361984: 24.38 seconds
+
+2025-03-01 08:19:55,021 - src.llm_review - INFO - Processing proposal: 2208578622766187264
+2025-03-01 08:19:56,529 - src.llm_review - INFO - Execution time for proposal 2208578622766187264: 1.51 seconds
+
+2025-03-01 08:19:56,529 - src.llm_review - INFO - Processing proposal: 2208789199635612416
+2025-03-01 08:19:58,500 - src.llm_review - INFO - Execution time for proposal 2208789199635612416: 1.97 seconds
+
+2025-03-01 08:19:58,500 - src.llm_review - INFO - Processing proposal: 2208992563552060160
+2025-03-01 08:20:00,959 - src.llm_review - INFO - Execution time for proposal 2208992563552060160: 2.46 seconds
+
+2025-03-01 08:20:00,960 - src.llm_review - INFO - Processing proposal: 2209033186929804032
+2025-03-01 08:20:02,901 - src.llm_review - INFO - Execution time for proposal 2209033186929804032: 1.94 seconds
+
+2025-03-01 08:20:02,902 - src.llm_review - INFO - Processing proposal: 2209040357629362944
+2025-03-01 08:20:04,767 - src.llm_review - INFO - Execution time for proposal 2209040357629362944: 1.87 seconds
+
+2025-03-01 08:20:04,767 - src.llm_review - INFO - Processing proposal: 2209120431347073792
+2025-03-01 08:20:06,791 - src.llm_review - INFO - Execution time for proposal 2209120431347073792: 2.02 seconds
+
+2025-03-01 08:20:06,792 - src.llm_review - INFO - Processing proposal: 2209123047938458368
+2025-03-01 08:20:08,739 - src.llm_review - INFO - Execution time for proposal 2209123047938458368: 1.95 seconds
+
+2025-03-01 08:20:08,739 - src.llm_review - INFO - Processing proposal: 2209155308083741440
+2025-03-01 08:20:10,715 - src.llm_review - INFO - Execution time for proposal 2209155308083741440: 1.98 seconds
+
+2025-03-01 08:20:10,716 - src.llm_review - INFO - Processing proposal: 2209459737420890880
+2025-03-01 08:20:12,936 - src.llm_review - INFO - Execution time for proposal 2209459737420890880: 2.22 seconds
+
+2025-03-01 08:20:12,936 - src.llm_review - INFO - Processing proposal: 2209507247787082496
+2025-03-01 08:20:14,471 - src.llm_review - INFO - Execution time for proposal 2209507247787082496: 1.53 seconds
+
+2025-03-01 08:20:14,472 - src.llm_review - INFO - Processing proposal: 2209587078117720832
+2025-03-01 08:20:16,684 - src.llm_review - INFO - Execution time for proposal 2209587078117720832: 2.21 seconds
+
+2025-03-01 08:20:16,685 - src.llm_review - INFO - Processing proposal: 2209677975304012544
+2025-03-01 08:20:18,668 - src.llm_review - INFO - Execution time for proposal 2209677975304012544: 1.98 seconds
+
+2025-03-01 08:20:18,669 - src.llm_review - INFO - Processing proposal: 2210220044032410368
+2025-03-01 08:20:20,533 - src.llm_review - INFO - Execution time for proposal 2210220044032410368: 1.86 seconds
+
+2025-03-01 08:20:20,533 - src.llm_review - INFO - Processing proposal: 2210288503076422400
+2025-03-01 08:20:22,559 - src.llm_review - INFO - Execution time for proposal 2210288503076422400: 2.03 seconds
+
+2025-03-01 08:20:22,559 - src.llm_review - INFO - Processing proposal: 2210341851536294656
+2025-03-01 08:20:24,302 - src.llm_review - INFO - Execution time for proposal 2210341851536294656: 1.74 seconds
+
+2025-03-01 08:20:24,303 - src.llm_review - INFO - Processing proposal: 2210394752925303552
+2025-03-01 08:20:24,539 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:20:26,860 - src.llm_review - ERROR - LLM invoke failed for proposal 2210394752925303552 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:20:48,979 - src.llm_review - INFO - Execution time for proposal 2210394752925303552: 24.68 seconds
+
+2025-03-01 08:20:48,980 - src.llm_review - INFO - Processing proposal: 2210405674750313216
+2025-03-01 08:20:51,214 - src.llm_review - INFO - Execution time for proposal 2210405674750313216: 2.23 seconds
+
+2025-03-01 08:20:51,215 - src.llm_review - INFO - Processing proposal: 2210432102875267840
+2025-03-01 08:20:53,073 - src.llm_review - INFO - Execution time for proposal 2210432102875267840: 1.86 seconds
+
+2025-03-01 08:20:53,074 - src.llm_review - INFO - Processing proposal: 2210433720316330752
+2025-03-01 08:20:55,226 - src.llm_review - INFO - Execution time for proposal 2210433720316330752: 2.15 seconds
+
+2025-03-01 08:20:55,227 - src.llm_review - INFO - Processing proposal: 2210443378934416128
+2025-03-01 08:20:57,273 - src.llm_review - INFO - Execution time for proposal 2210443378934416128: 2.05 seconds
+
+2025-03-01 08:20:57,274 - src.llm_review - INFO - Processing proposal: 2210457031310050048
+2025-03-01 08:20:58,913 - src.llm_review - INFO - Execution time for proposal 2210457031310050048: 1.64 seconds
+
+2025-03-01 08:20:58,913 - src.llm_review - INFO - Processing proposal: 2210461538760786688
+2025-03-01 08:21:01,574 - src.llm_review - INFO - Execution time for proposal 2210461538760786688: 2.66 seconds
+
+2025-03-01 08:21:01,574 - src.llm_review - INFO - Processing proposal: 2210513372791702272
+2025-03-01 08:21:04,032 - src.llm_review - INFO - Execution time for proposal 2210513372791702272: 2.46 seconds
+
+2025-03-01 08:21:04,032 - src.llm_review - INFO - Processing proposal: 2210517591254893312
+2025-03-01 08:21:05,668 - src.llm_review - INFO - Execution time for proposal 2210517591254893312: 1.64 seconds
+
+2025-03-01 08:21:05,669 - src.llm_review - INFO - Processing proposal: 2210697815674323712
+2025-03-01 08:21:08,023 - src.llm_review - INFO - Execution time for proposal 2210697815674323712: 2.35 seconds
+
+2025-03-01 08:21:08,024 - src.llm_review - INFO - Processing proposal: 2210750583986455296
+2025-03-01 08:21:09,867 - src.llm_review - INFO - Execution time for proposal 2210750583986455296: 1.84 seconds
+
+2025-03-01 08:21:09,867 - src.llm_review - INFO - Processing proposal: 2210778103544808192
+2025-03-01 08:21:11,710 - src.llm_review - INFO - Execution time for proposal 2210778103544808192: 1.84 seconds
+
+2025-03-01 08:21:11,710 - src.llm_review - INFO - Processing proposal: 2211064418454733568
+2025-03-01 08:21:13,656 - src.llm_review - INFO - Execution time for proposal 2211064418454733568: 1.95 seconds
+
+2025-03-01 08:21:13,657 - src.llm_review - INFO - Saving 77 results to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:21:13,692 - src.llm_review - INFO - Results saved to ./output/simple_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:21:13,693 - src.main - INFO - Running complete prompt review with output to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:21:13,693 - src.llm_review - INFO - Loading proposal data from /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/data/pycon_2024_proposal.xlsx
+2025-03-01 08:21:13,733 - src.llm_review - INFO - Setting up LLM chain with prompt /Users/nien/Desktop/Kevin/pycon2025/PyCon-TW-2025/prompt/full_prompt.txt and model gemini-2.0-flash
+2025-03-01 08:21:13,738 - src.llm_review - INFO - Processing proposal: 2178936233474917120
+2025-03-01 08:21:16,006 - src.llm_review - INFO - Execution time for proposal 2178936233474917120: 2.27 seconds
+
+2025-03-01 08:21:16,006 - src.llm_review - INFO - Processing proposal: 2178979854999880448
+2025-03-01 08:21:17,889 - src.llm_review - INFO - Execution time for proposal 2178979854999880448: 1.88 seconds
+
+2025-03-01 08:21:17,889 - src.llm_review - INFO - Processing proposal: 2178981707884004096
+2025-03-01 08:21:20,107 - src.llm_review - INFO - Execution time for proposal 2178981707884004096: 2.22 seconds
+
+2025-03-01 08:21:20,108 - src.llm_review - INFO - Processing proposal: 2179613228097602304
+2025-03-01 08:21:20,345 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:21:22,588 - src.llm_review - ERROR - LLM invoke failed for proposal 2179613228097602304 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:21:42,937 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:21:45,299 - src.llm_review - ERROR - LLM invoke failed for proposal 2179613228097602304 (Attempt 2/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:22:07,534 - src.llm_review - INFO - Execution time for proposal 2179613228097602304: 47.43 seconds
+
+2025-03-01 08:22:07,534 - src.llm_review - INFO - Processing proposal: 2180814504890204928
+2025-03-01 08:22:09,774 - src.llm_review - INFO - Execution time for proposal 2180814504890204928: 2.24 seconds
+
+2025-03-01 08:22:09,775 - src.llm_review - INFO - Processing proposal: 2181661100230050560
+2025-03-01 08:22:11,823 - src.llm_review - INFO - Execution time for proposal 2181661100230050560: 2.05 seconds
+
+2025-03-01 08:22:11,824 - src.llm_review - INFO - Processing proposal: 2181767915890541312
+2025-03-01 08:22:14,689 - src.llm_review - INFO - Execution time for proposal 2181767915890541312: 2.87 seconds
+
+2025-03-01 08:22:14,689 - src.llm_review - INFO - Processing proposal: 2183455404749488896
+2025-03-01 08:22:16,843 - src.llm_review - INFO - Execution time for proposal 2183455404749488896: 2.15 seconds
+
+2025-03-01 08:22:16,844 - src.llm_review - INFO - Processing proposal: 2184258951825064704
+2025-03-01 08:22:19,079 - src.llm_review - INFO - Execution time for proposal 2184258951825064704: 2.24 seconds
+
+2025-03-01 08:22:19,080 - src.llm_review - INFO - Processing proposal: 2184265081062163200
+2025-03-01 08:22:21,448 - src.llm_review - INFO - Execution time for proposal 2184265081062163200: 2.37 seconds
+
+2025-03-01 08:22:21,448 - src.llm_review - INFO - Processing proposal: 2184271553351385856
+2025-03-01 08:22:23,494 - src.llm_review - INFO - Execution time for proposal 2184271553351385856: 2.05 seconds
+
+2025-03-01 08:22:23,495 - src.llm_review - INFO - Processing proposal: 2185842091785978624
+2025-03-01 08:22:25,733 - src.llm_review - INFO - Execution time for proposal 2185842091785978624: 2.24 seconds
+
+2025-03-01 08:22:25,734 - src.llm_review - INFO - Processing proposal: 2185844604283126528
+2025-03-01 08:22:27,800 - src.llm_review - INFO - Execution time for proposal 2185844604283126528: 2.07 seconds
+
+2025-03-01 08:22:27,801 - src.llm_review - INFO - Processing proposal: 2185845802830660352
+2025-03-01 08:22:29,876 - src.llm_review - INFO - Execution time for proposal 2185845802830660352: 2.07 seconds
+
+2025-03-01 08:22:29,876 - src.llm_review - INFO - Processing proposal: 2185846315039064832
+2025-03-01 08:22:32,403 - src.llm_review - INFO - Execution time for proposal 2185846315039064832: 2.53 seconds
+
+2025-03-01 08:22:32,403 - src.llm_review - INFO - Processing proposal: 2186438925994689280
+2025-03-01 08:22:34,556 - src.llm_review - INFO - Execution time for proposal 2186438925994689280: 2.15 seconds
+
+2025-03-01 08:22:34,556 - src.llm_review - INFO - Processing proposal: 2186443284254032640
+2025-03-01 08:22:37,417 - src.llm_review - INFO - Execution time for proposal 2186443284254032640: 2.86 seconds
+
+2025-03-01 08:22:37,417 - src.llm_review - INFO - Processing proposal: 2186467836912730880
+2025-03-01 08:22:39,243 - src.llm_review - INFO - Execution time for proposal 2186467836912730880: 1.83 seconds
+
+2025-03-01 08:22:39,258 - src.llm_review - INFO - Processing proposal: 2188433923833332480
+2025-03-01 08:22:39,669 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:22:41,929 - src.llm_review - ERROR - LLM invoke failed for proposal 2188433923833332480 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:23:04,150 - src.llm_review - INFO - Execution time for proposal 2188433923833332480: 24.89 seconds
+
+2025-03-01 08:23:04,151 - src.llm_review - INFO - Processing proposal: 2188525315913941760
+2025-03-01 08:23:06,808 - src.llm_review - INFO - Execution time for proposal 2188525315913941760: 2.66 seconds
+
+2025-03-01 08:23:06,809 - src.llm_review - INFO - Processing proposal: 2189264747189240576
+2025-03-01 08:23:09,165 - src.llm_review - INFO - Execution time for proposal 2189264747189240576: 2.36 seconds
+
+2025-03-01 08:23:09,166 - src.llm_review - INFO - Processing proposal: 2189388256229982976
+2025-03-01 08:23:12,237 - src.llm_review - INFO - Execution time for proposal 2189388256229982976: 3.07 seconds
+
+2025-03-01 08:23:12,237 - src.llm_review - INFO - Processing proposal: 2192450893792674560
+2025-03-01 08:23:14,288 - src.llm_review - INFO - Execution time for proposal 2192450893792674560: 2.05 seconds
+
+2025-03-01 08:23:14,288 - src.llm_review - INFO - Processing proposal: 2192916629635990272
+2025-03-01 08:23:16,129 - src.llm_review - INFO - Execution time for proposal 2192916629635990272: 1.84 seconds
+
+2025-03-01 08:23:16,129 - src.llm_review - INFO - Processing proposal: 2192921804903809792
+2025-03-01 08:23:18,383 - src.llm_review - INFO - Execution time for proposal 2192921804903809792: 2.25 seconds
+
+2025-03-01 08:23:18,384 - src.llm_review - INFO - Processing proposal: 2194950561579664128
+2025-03-01 08:23:20,700 - src.llm_review - INFO - Execution time for proposal 2194950561579664128: 2.32 seconds
+
+2025-03-01 08:23:20,700 - src.llm_review - INFO - Processing proposal: 2195629600740999936
+2025-03-01 08:23:23,259 - src.llm_review - INFO - Execution time for proposal 2195629600740999936: 2.56 seconds
+
+2025-03-01 08:23:23,260 - src.llm_review - INFO - Processing proposal: 2195682525014131456
+2025-03-01 08:23:25,526 - src.llm_review - INFO - Execution time for proposal 2195682525014131456: 2.27 seconds
+
+2025-03-01 08:23:25,527 - src.llm_review - INFO - Processing proposal: 2195793247056429824
+2025-03-01 08:23:28,108 - src.llm_review - INFO - Execution time for proposal 2195793247056429824: 2.58 seconds
+
+2025-03-01 08:23:28,108 - src.llm_review - INFO - Processing proposal: 2197219917860700928
+2025-03-01 08:23:30,771 - src.llm_review - INFO - Execution time for proposal 2197219917860700928: 2.66 seconds
+
+2025-03-01 08:23:30,771 - src.llm_review - INFO - Processing proposal: 2197262136667800320
+2025-03-01 08:23:33,230 - src.llm_review - INFO - Execution time for proposal 2197262136667800320: 2.46 seconds
+
+2025-03-01 08:23:33,231 - src.llm_review - INFO - Processing proposal: 2197952451796009728
+2025-03-01 08:23:35,273 - src.llm_review - INFO - Execution time for proposal 2197952451796009728: 2.04 seconds
+
+2025-03-01 08:23:35,273 - src.llm_review - INFO - Processing proposal: 2198581276154266368
+2025-03-01 08:23:37,839 - src.llm_review - INFO - Execution time for proposal 2198581276154266368: 2.57 seconds
+
+2025-03-01 08:23:37,840 - src.llm_review - INFO - Processing proposal: 2201589261063422720
+2025-03-01 08:23:40,401 - src.llm_review - INFO - Execution time for proposal 2201589261063422720: 2.56 seconds
+
+2025-03-01 08:23:40,402 - src.llm_review - INFO - Processing proposal: 2201815482904871680
+2025-03-01 08:23:40,700 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:23:42,960 - src.llm_review - ERROR - LLM invoke failed for proposal 2201815482904871680 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:24:05,114 - src.llm_review - INFO - Execution time for proposal 2201815482904871680: 24.71 seconds
+
+2025-03-01 08:24:05,114 - src.llm_review - INFO - Processing proposal: 2202583607111844608
+2025-03-01 08:24:07,125 - src.llm_review - INFO - Execution time for proposal 2202583607111844608: 2.01 seconds
+
+2025-03-01 08:24:07,126 - src.llm_review - INFO - Processing proposal: 2202977686752592640
+2025-03-01 08:24:09,481 - src.llm_review - INFO - Execution time for proposal 2202977686752592640: 2.36 seconds
+
+2025-03-01 08:24:09,481 - src.llm_review - INFO - Processing proposal: 2203075043099935488
+2025-03-01 08:24:11,530 - src.llm_review - INFO - Execution time for proposal 2203075043099935488: 2.05 seconds
+
+2025-03-01 08:24:11,530 - src.llm_review - INFO - Processing proposal: 2204392707969778432
+2025-03-01 08:24:13,577 - src.llm_review - INFO - Execution time for proposal 2204392707969778432: 2.05 seconds
+
+2025-03-01 08:24:13,577 - src.llm_review - INFO - Processing proposal: 2205027665625219840
+2025-03-01 08:24:15,829 - src.llm_review - INFO - Execution time for proposal 2205027665625219840: 2.25 seconds
+
+2025-03-01 08:24:15,830 - src.llm_review - INFO - Processing proposal: 2205136900467983104
+2025-03-01 08:24:18,598 - src.llm_review - INFO - Execution time for proposal 2205136900467983104: 2.77 seconds
+
+2025-03-01 08:24:18,598 - src.llm_review - INFO - Processing proposal: 2205248731861746432
+2025-03-01 08:24:21,013 - src.llm_review - INFO - Execution time for proposal 2205248731861746432: 2.41 seconds
+
+2025-03-01 08:24:21,013 - src.llm_review - INFO - Processing proposal: 2205337041422516992
+2025-03-01 08:24:23,204 - src.llm_review - INFO - Execution time for proposal 2205337041422516992: 2.19 seconds
+
+2025-03-01 08:24:23,204 - src.llm_review - INFO - Processing proposal: 2206153743848702720
+2025-03-01 08:24:25,420 - src.llm_review - INFO - Execution time for proposal 2206153743848702720: 2.22 seconds
+
+2025-03-01 08:24:25,421 - src.llm_review - INFO - Processing proposal: 2206556565719220992
+2025-03-01 08:24:27,606 - src.llm_review - INFO - Execution time for proposal 2206556565719220992: 2.18 seconds
+
+2025-03-01 08:24:27,606 - src.llm_review - INFO - Processing proposal: 2206896476334850816
+2025-03-01 08:24:30,105 - src.llm_review - INFO - Execution time for proposal 2206896476334850816: 2.50 seconds
+
+2025-03-01 08:24:30,106 - src.llm_review - INFO - Processing proposal: 2206984221174530816
+2025-03-01 08:24:32,520 - src.llm_review - INFO - Execution time for proposal 2206984221174530816: 2.41 seconds
+
+2025-03-01 08:24:32,520 - src.llm_review - INFO - Processing proposal: 2207288307711214336
+2025-03-01 08:24:34,878 - src.llm_review - INFO - Execution time for proposal 2207288307711214336: 2.36 seconds
+
+2025-03-01 08:24:34,878 - src.llm_review - INFO - Processing proposal: 2208409881428361984
+2025-03-01 08:24:37,440 - src.llm_review - INFO - Execution time for proposal 2208409881428361984: 2.56 seconds
+
+2025-03-01 08:24:37,440 - src.llm_review - INFO - Processing proposal: 2208578622766187264
+2025-03-01 08:24:39,350 - src.llm_review - INFO - Execution time for proposal 2208578622766187264: 1.91 seconds
+
+2025-03-01 08:24:39,350 - src.llm_review - INFO - Processing proposal: 2208789199635612416
+2025-03-01 08:24:39,589 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:24:41,829 - src.llm_review - ERROR - LLM invoke failed for proposal 2208789199635612416 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:25:04,472 - src.llm_review - INFO - Execution time for proposal 2208789199635612416: 25.12 seconds
+
+2025-03-01 08:25:04,473 - src.llm_review - INFO - Processing proposal: 2208992563552060160
+2025-03-01 08:25:07,953 - src.llm_review - INFO - Execution time for proposal 2208992563552060160: 3.48 seconds
+
+2025-03-01 08:25:07,954 - src.llm_review - INFO - Processing proposal: 2209033186929804032
+2025-03-01 08:25:09,899 - src.llm_review - INFO - Execution time for proposal 2209033186929804032: 1.95 seconds
+
+2025-03-01 08:25:09,900 - src.llm_review - INFO - Processing proposal: 2209040357629362944
+2025-03-01 08:25:12,563 - src.llm_review - INFO - Execution time for proposal 2209040357629362944: 2.66 seconds
+
+2025-03-01 08:25:12,564 - src.llm_review - INFO - Processing proposal: 2209120431347073792
+2025-03-01 08:25:15,328 - src.llm_review - INFO - Execution time for proposal 2209120431347073792: 2.76 seconds
+
+2025-03-01 08:25:15,328 - src.llm_review - INFO - Processing proposal: 2209123047938458368
+2025-03-01 08:25:17,988 - src.llm_review - INFO - Execution time for proposal 2209123047938458368: 2.66 seconds
+
+2025-03-01 08:25:17,989 - src.llm_review - INFO - Processing proposal: 2209155308083741440
+2025-03-01 08:25:19,969 - src.llm_review - INFO - Execution time for proposal 2209155308083741440: 1.98 seconds
+
+2025-03-01 08:25:19,969 - src.llm_review - INFO - Processing proposal: 2209459737420890880
+2025-03-01 08:25:22,288 - src.llm_review - INFO - Execution time for proposal 2209459737420890880: 2.32 seconds
+
+2025-03-01 08:25:22,289 - src.llm_review - INFO - Processing proposal: 2209507247787082496
+2025-03-01 08:25:24,033 - src.llm_review - INFO - Execution time for proposal 2209507247787082496: 1.74 seconds
+
+2025-03-01 08:25:24,033 - src.llm_review - INFO - Processing proposal: 2209587078117720832
+2025-03-01 08:25:26,386 - src.llm_review - INFO - Execution time for proposal 2209587078117720832: 2.35 seconds
+
+2025-03-01 08:25:26,387 - src.llm_review - INFO - Processing proposal: 2209677975304012544
+2025-03-01 08:25:29,356 - src.llm_review - INFO - Execution time for proposal 2209677975304012544: 2.97 seconds
+
+2025-03-01 08:25:29,356 - src.llm_review - INFO - Processing proposal: 2210220044032410368
+2025-03-01 08:25:31,351 - src.llm_review - INFO - Execution time for proposal 2210220044032410368: 1.99 seconds
+
+2025-03-01 08:25:31,351 - src.llm_review - INFO - Processing proposal: 2210288503076422400
+2025-03-01 08:25:33,963 - src.llm_review - INFO - Execution time for proposal 2210288503076422400: 2.61 seconds
+
+2025-03-01 08:25:33,964 - src.llm_review - INFO - Processing proposal: 2210341851536294656
+2025-03-01 08:25:36,114 - src.llm_review - INFO - Execution time for proposal 2210341851536294656: 2.15 seconds
+
+2025-03-01 08:25:36,115 - src.llm_review - INFO - Processing proposal: 2210394752925303552
+2025-03-01 08:25:39,228 - src.llm_review - INFO - Execution time for proposal 2210394752925303552: 3.11 seconds
+
+2025-03-01 08:25:39,229 - src.llm_review - INFO - Processing proposal: 2210405674750313216
+2025-03-01 08:25:41,540 - src.llm_review - INFO - Execution time for proposal 2210405674750313216: 2.31 seconds
+
+2025-03-01 08:25:41,540 - src.llm_review - INFO - Processing proposal: 2210432102875267840
+2025-03-01 08:25:41,842 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Resource has been exhausted (e.g. check quota)..
+2025-03-01 08:25:44,082 - src.llm_review - ERROR - LLM invoke failed for proposal 2210432102875267840 (Attempt 1/6): 429 Resource has been exhausted (e.g. check quota).
+2025-03-01 08:26:06,364 - src.llm_review - INFO - Execution time for proposal 2210432102875267840: 24.82 seconds
+
+2025-03-01 08:26:06,364 - src.llm_review - INFO - Processing proposal: 2210433720316330752
+2025-03-01 08:26:08,738 - src.llm_review - INFO - Execution time for proposal 2210433720316330752: 2.37 seconds
+
+2025-03-01 08:26:08,738 - src.llm_review - INFO - Processing proposal: 2210443378934416128
+2025-03-01 08:26:11,033 - src.llm_review - INFO - Execution time for proposal 2210443378934416128: 2.30 seconds
+
+2025-03-01 08:26:11,034 - src.llm_review - INFO - Processing proposal: 2210457031310050048
+2025-03-01 08:26:13,080 - src.llm_review - INFO - Execution time for proposal 2210457031310050048: 2.05 seconds
+
+2025-03-01 08:26:13,080 - src.llm_review - INFO - Processing proposal: 2210461538760786688
+2025-03-01 08:26:15,437 - src.llm_review - INFO - Execution time for proposal 2210461538760786688: 2.36 seconds
+
+2025-03-01 08:26:15,437 - src.llm_review - INFO - Processing proposal: 2210513372791702272
+2025-03-01 08:26:18,305 - src.llm_review - INFO - Execution time for proposal 2210513372791702272: 2.87 seconds
+
+2025-03-01 08:26:18,305 - src.llm_review - INFO - Processing proposal: 2210517591254893312
+2025-03-01 08:26:20,722 - src.llm_review - INFO - Execution time for proposal 2210517591254893312: 2.42 seconds
+
+2025-03-01 08:26:20,722 - src.llm_review - INFO - Processing proposal: 2210697815674323712
+2025-03-01 08:26:23,117 - src.llm_review - INFO - Execution time for proposal 2210697815674323712: 2.39 seconds
+
+2025-03-01 08:26:23,117 - src.llm_review - INFO - Processing proposal: 2210750583986455296
+2025-03-01 08:26:25,882 - src.llm_review - INFO - Execution time for proposal 2210750583986455296: 2.76 seconds
+
+2025-03-01 08:26:25,882 - src.llm_review - INFO - Processing proposal: 2210778103544808192
+2025-03-01 08:26:27,532 - src.llm_review - INFO - Execution time for proposal 2210778103544808192: 1.65 seconds
+
+2025-03-01 08:26:27,532 - src.llm_review - INFO - Processing proposal: 2211064418454733568
+2025-03-01 08:26:29,570 - src.llm_review - INFO - Execution time for proposal 2211064418454733568: 2.04 seconds
+
+2025-03-01 08:26:29,570 - src.llm_review - INFO - Saving 77 results to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:26:29,604 - src.llm_review - INFO - Results saved to ./output/full_prompt_gemini_flash_20250301.xlsx
+2025-03-01 08:26:29,605 - src.main - INFO - Running data merge and analysis
+2025-03-01 08:26:29,605 - src.merge_data - INFO - Loading data files
+2025-03-01 08:26:29,776 - src.merge_data - INFO - Calculating vote statistics
+2025-03-01 08:26:29,805 - src.merge_data - INFO - Merging data
+2025-03-01 08:26:29,809 - src.merge_data - INFO - Saving merged data to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:26:29,896 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:26:29,896 - src.merge_data - ERROR - Required columns not found: LLM_vote or vote_most_common_vote
+2025-03-01 08:26:29,897 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:26:29,897 - src.merge_data - ERROR - Required columns not found: LLM_vote or vote_most_common_vote
+2025-03-01 08:26:29,898 - src.main - INFO - Merged data saved to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:32:52,822 - src.main - INFO - Running data merge and analysis
+2025-03-01 08:32:52,823 - src.merge_data - INFO - Loading data files
+2025-03-01 08:32:53,305 - src.merge_data - INFO - Calculating vote statistics
+2025-03-01 08:32:53,333 - src.merge_data - INFO - Merging data
+2025-03-01 08:32:53,339 - src.merge_data - INFO - Saving merged data to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:32:53,472 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:32:53,472 - src.merge_data - ERROR - Required columns not found: vote or vote_most_common_vote
+2025-03-01 08:32:53,473 - src.merge_data - INFO - Available columns: ['id', 'title', 'category', 'duration', 'language', 'abstract', 'python_level', 'detailed_description', 'outline', 'supplementary', 'recording_policy', 'slide_link', 'submitter_id', 'created_at', 'objective', 'cancelled', 'accepted', 'conference', 'last_updated_at', 'slido_embed_link', 'referring_policy', 'labels', 'first_time_speaker', 'live_stream_policy', 'hackmd_embed_link', 'living_in_taiwan', 'attend_in_person', 'proposal_id_x', 'vote_most_common_vote', 'vote_vote_counts', 'vote_int_mean', 'vote_int_std', 'vote_int_count', 'vote_int_median', 'summary_x', 'comment_x', 'vote_x', 'proposal_id_simple', 'summary_complete', 'comment_complete', 'vote_complete', 'proposal_id_complete', 'human_eval', 'summary_y', 'comment_y', 'vote_y', 'proposal_id_y']
+2025-03-01 08:32:53,474 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:32:53,474 - src.merge_data - ERROR - Required columns not found: vote or vote_most_common_vote
+2025-03-01 08:32:53,474 - src.merge_data - INFO - Available columns: ['id', 'title', 'category', 'duration', 'language', 'abstract', 'python_level', 'detailed_description', 'outline', 'supplementary', 'recording_policy', 'slide_link', 'submitter_id', 'created_at', 'objective', 'cancelled', 'accepted', 'conference', 'last_updated_at', 'slido_embed_link', 'referring_policy', 'labels', 'first_time_speaker', 'live_stream_policy', 'hackmd_embed_link', 'living_in_taiwan', 'attend_in_person', 'proposal_id_x', 'vote_most_common_vote', 'vote_vote_counts', 'vote_int_mean', 'vote_int_std', 'vote_int_count', 'vote_int_median', 'summary_x', 'comment_x', 'vote_x', 'proposal_id_simple', 'summary_complete', 'comment_complete', 'vote_complete', 'proposal_id_complete', 'human_eval', 'summary_y', 'comment_y', 'vote_y', 'proposal_id_y']
+2025-03-01 08:32:53,474 - src.main - INFO - Merged data saved to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:33:28,604 - src.main - INFO - Running data merge and analysis
+2025-03-01 08:33:28,605 - src.merge_data - INFO - Loading data files
+2025-03-01 08:33:29,077 - src.merge_data - INFO - Calculating vote statistics
+2025-03-01 08:33:29,103 - src.merge_data - INFO - Merging data
+2025-03-01 08:33:29,108 - src.merge_data - INFO - Saving merged data to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:33:29,231 - src.merge_data - INFO - Merged DataFrame columns: ['id', 'title', 'category', 'duration', 'language', 'abstract', 'python_level', 'detailed_description', 'outline', 'supplementary', 'recording_policy', 'slide_link', 'submitter_id', 'created_at', 'objective', 'cancelled', 'accepted', 'conference', 'last_updated_at', 'slido_embed_link', 'referring_policy', 'labels', 'first_time_speaker', 'live_stream_policy', 'hackmd_embed_link', 'living_in_taiwan', 'attend_in_person', 'proposal_id', 'vote_most_common_vote', 'vote_vote_counts', 'vote_int_mean', 'vote_int_std', 'vote_int_count', 'vote_int_median', 'summary', 'comment', 'vote', 'proposal_id_simple', 'summary_complete', 'comment_complete', 'vote_complete', 'proposal_id_complete', 'human_eval']
+2025-03-01 08:33:29,232 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:33:29,280 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:33:29,312 - src.main - INFO - Merged data saved to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:43:21,924 - src.main - INFO - Running data merge and analysis
+2025-03-01 08:43:21,925 - src.merge_data - INFO - Loading data files
+2025-03-01 08:43:22,300 - src.merge_data - INFO - Calculating vote statistics
+2025-03-01 08:43:22,331 - src.merge_data - INFO - Merging data
+2025-03-01 08:43:22,339 - src.merge_data - INFO - Saving merged data to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:43:22,595 - src.merge_data - INFO - Merged DataFrame columns: ['id', 'title', 'category', 'duration', 'language', 'abstract', 'python_level', 'detailed_description', 'outline', 'supplementary', 'recording_policy', 'slide_link', 'submitter_id', 'created_at', 'objective', 'cancelled', 'accepted', 'conference', 'last_updated_at', 'slido_embed_link', 'referring_policy', 'labels', 'first_time_speaker', 'live_stream_policy', 'hackmd_embed_link', 'living_in_taiwan', 'attend_in_person', 'proposal_id', 'vote_most_common_vote', 'vote_vote_counts', 'vote_int_mean', 'vote_int_std', 'vote_int_count', 'vote_int_median', 'summary', 'comment', 'vote', 'proposal_id_simple', 'summary_complete', 'comment_complete', 'vote_complete', 'proposal_id_complete', 'human_eval']
+2025-03-01 08:43:22,595 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:43:22,627 - src.merge_data - INFO - === Simple Prompt Analysis Results ===
+2025-03-01 08:43:22,627 - src.merge_data - INFO - LLM Vote Distribution: {'+0': 0.779, '+1': 0.195, '-1': 0.013, '-0': 0.013}
+2025-03-01 08:43:22,628 - src.merge_data - INFO - Human Vote Distribution: {'+0': 0.623, '+1': 0.182, '-0': 0.156, '-1': 0.039}
+2025-03-01 08:43:22,628 - src.merge_data - INFO - Agreement Rate: 0.636
+2025-03-01 08:43:22,628 - src.merge_data - INFO - Confusion Matrix: {'+0': {'+0': 41, '+1': 7, '-0': 0, '-1': 0, 'All': 48}, '+1': {'+0': 8, '+1': 6, '-0': 0, '-1': 0, 'All': 14}, '-0': {'+0': 9, '+1': 2, '-0': 1, '-1': 0, 'All': 12}, '-1': {'+0': 2, '+1': 0, '-0': 0, '-1': 1, 'All': 3}, 'All': {'+0': 60, '+1': 15, '-0': 1, '-1': 1, 'All': 77}}
+2025-03-01 08:43:22,628 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:43:22,654 - src.merge_data - INFO - === Complete Prompt Analysis Results ===
+2025-03-01 08:43:22,654 - src.merge_data - INFO - LLM Vote Distribution: {'+0': 0.935, '+1': 0.039, '-0': 0.026}
+2025-03-01 08:43:22,654 - src.merge_data - INFO - Human Vote Distribution: {'+0': 0.623, '+1': 0.182, '-0': 0.156, '-1': 0.039}
+2025-03-01 08:43:22,654 - src.merge_data - INFO - Agreement Rate: 0.649
+2025-03-01 08:43:22,654 - src.merge_data - INFO - Confusion Matrix: {'+0': {'+0': 47, '+1': 1, '-0': 0, 'All': 48}, '+1': {'+0': 12, '+1': 2, '-0': 0, 'All': 14}, '-0': {'+0': 11, '+1': 0, '-0': 1, 'All': 12}, '-1': {'+0': 2, '+1': 0, '-0': 1, 'All': 3}, 'All': {'+0': 72, '+1': 3, '-0': 2, 'All': 77}}
+2025-03-01 08:43:22,655 - src.main - INFO - Merged data saved to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:43:22,655 - src.main - INFO - === Analysis Results Summary ===
+2025-03-01 08:43:22,655 - src.main - INFO - Simple prompt agreement rate with human reviewers: 0.636
+2025-03-01 08:43:22,655 - src.main - INFO - Complete prompt agreement rate with human reviewers: 0.649
+2025-03-01 08:48:01,354 - src.main - INFO - Running data merge and analysis
+2025-03-01 08:48:01,355 - src.merge_data - INFO - Loading data files
+2025-03-01 08:48:01,726 - src.merge_data - INFO - Calculating vote statistics
+2025-03-01 08:48:01,755 - src.merge_data - INFO - Merging data
+2025-03-01 08:48:01,761 - src.merge_data - INFO - Saving merged data to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:48:01,878 - src.merge_data - INFO - Merged DataFrame columns: ['id', 'title', 'category', 'duration', 'language', 'abstract', 'python_level', 'detailed_description', 'outline', 'supplementary', 'recording_policy', 'slide_link', 'submitter_id', 'created_at', 'objective', 'cancelled', 'accepted', 'conference', 'last_updated_at', 'slido_embed_link', 'referring_policy', 'labels', 'first_time_speaker', 'live_stream_policy', 'hackmd_embed_link', 'living_in_taiwan', 'attend_in_person', 'proposal_id', 'vote_most_common_vote', 'vote_vote_counts', 'vote_int_mean', 'vote_int_std', 'vote_int_count', 'vote_int_median', 'summary', 'comment', 'vote', 'proposal_id_simple', 'summary_complete', 'comment_complete', 'vote_complete', 'proposal_id_complete', 'human_eval']
+2025-03-01 08:48:01,878 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:48:01,898 - src.merge_data - INFO - Analyzing vote distribution
+2025-03-01 08:48:01,921 - src.merge_data - INFO - Saving analysis results to ./output/vote_analysis_20250301.json
+2025-03-01 08:48:01,922 - src.merge_data - INFO - Saving analysis report to ./output/vote_analysis_20250301.txt
+2025-03-01 08:48:01,929 - src.main - INFO - Merged data saved to ./output/pycon_2024_proposal_with_llm_and_review_20250301.xlsx
+2025-03-01 08:48:01,929 - src.main - INFO - Analysis results saved to ./output/vote_analysis_20250301.json
+2025-03-01 08:48:01,929 - src.main - INFO - Analysis report saved to ./output/vote_analysis_20250301.txt
