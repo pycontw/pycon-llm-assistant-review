@@ -1,3 +1,42 @@
+--get negative proposals
+SELECT
+    pt.conference,
+    pt.abstract,
+    length(pt.abstract),
+    pt.id AS proposal_id,
+    pt.title,
+    COUNT(CASE WHEN rr.vote = '-1' THEN 1 END) AS negative_votes,
+    COUNT(*) AS total_reviews,
+    ROUND(100.0 * COUNT(CASE WHEN rr.vote = '-1' THEN 1 END) / COUNT(*), 2) AS negative_percentage
+FROM reviews_review rr
+JOIN proposals_talkproposal pt ON pt.id = rr.proposal_id
+WHERE 1=1
+--  AND pt.conference = 'pycontw-2024'
+AND pt.abstract NOT IN ('', 'None', '<empty content>', '(No content) - processed by the program team', 'na', 'test')
+AND length(pt.abstract) <> 1
+GROUP BY pt.id, pt.title
+HAVING 1=1
+ -- AND COUNT(CASE WHEN rr.vote = '-1' THEN 1 END) > 5  -- Only proposals with at least one -1 vote
+  AND ROUND(100.0 * COUNT(CASE WHEN rr.vote = '-1' THEN 1 END) / COUNT(*), 2)  > 25
+  AND COUNT(*)  > 3
+ORDER BY pt.id;
+
+
+SELECT
+    pt.title
+  , pt.abstract
+  , pt.detailed_description
+  , pt.outline
+  , pt.supplementary
+  , pt.objective
+FROM proposals_talkproposal pt
+
+select *
+from reviews_review
+
+
+
+
 -- empty proposal
 SELECT distinct
     pt.id
