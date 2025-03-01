@@ -3,3 +3,4 @@
 data/
 exp/
 .vscode/
+__pycache__/
