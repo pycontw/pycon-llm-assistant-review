@@ -1,0 +1,48 @@
+
+=== Simple Prompt Analysis ===
+
+LLM Vote Distribution:
++0: 0.779
++1: 0.195
+-1: 0.013
+-0: 0.013
+
+Human Vote Distribution:
++0: 0.623
++1: 0.182
+-0: 0.156
+-1: 0.039
+
+Overall Agreement Rate: 0.636
+
+Confusion Matrix:
+     +0  +1  -0  -1  All
++0   41   8   9   2   60
++1    7   6   2   0   15
+-0    0   0   1   0    1
+-1    0   0   0   1    1
+All  48  14  12   3   77
+
+
+=== Complete Prompt Analysis ===
+
+LLM Vote Distribution:
++0: 0.935
++1: 0.039
+-0: 0.026
+
+Human Vote Distribution:
++0: 0.623
++1: 0.182
+-0: 0.156
+-1: 0.039
+
+Overall Agreement Rate: 0.649
+
+Confusion Matrix:
+     +0  +1  -0  -1  All
++0   47  12  11   2   72
++1    1   2   0   0    3
+-0    0   0   1   1    2
+All  48  14  12   3   77
+
