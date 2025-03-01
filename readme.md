@@ -8,6 +8,11 @@ This project aims to develop an LLM-based system to assist in the review process
 2. Validate the effectiveness of LLM-based review assistance
 3. Integrate human review and LLM review data for comparative analysis
 
+## Data Source
+
+Currently, the data source is from the Metabase, and the file is exported as an Excel file.
+The data is stored in the Google Drive, and the file is shared with the team members.
+
 ## Project Structure
 
 ```
