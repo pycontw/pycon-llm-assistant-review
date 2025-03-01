@@ -4,3 +4,4 @@ data/
 exp/
 .vscode/
 __pycache__/
+output/
