@@ -1,0 +1,41 @@
+你是審核 PyCon 議程提案的助手。請基於以下資訊將提案分類。
+    
+提案資訊:
+{PROPOSAL_INFO}
+
+請將提案分類到以下類別中的前三個最相關類別，按相關性排序 (category1 > category2 > category3)。
+如果提案不屬於任何列出的類別，請使用「Other」。
+只有 category1 是必填的，如果找不到其他相關類別，category2 和 category3 可以留空。
+
+可用類別:
+- Application
+- Best Practices & Patterns
+- Community
+- Databases
+- Data Analysis
+- Education
+- Embedded Systems
+- FinTech
+- Internet of Things
+- Gaming
+- Graphics
+- Machine Learning
+- Natural Language Processing
+- Python Core (language, stdlib, etc.)
+- Project Tooling
+- Science
+- Security
+- Systems Administration
+- Testing
+- Web Frameworks
+- Other
+
+推理過程:
+{THINKING}
+
+請以 JSON 格式回應，包含以下欄位:
+- proposal_id: 提案 ID
+- category1: 最相關的類別（必填）
+- category2: 第二相關的類別（選填）
+- category3: 第三相關的類別（選填）
+- reasoning: 簡短解釋類別選擇的原因 
