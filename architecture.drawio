@@ -1,0 +1,364 @@
+<mxfile host="app.diagrams.net" modified="2026-04-25T00:00:00.000Z" agent="Claude" version="24.0.0">
+  <diagram name="Data &amp; Command Flow" id="page1">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title1" value="PyCon TW 2025 — Data &amp; Command Flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="metabase" value="Metabase&#10;(database id = 12)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="600" y="80" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="connector" value="src/db/connector.py:33&#10;MetabaseConnector&#10;(+ src/db/queries.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="600" y="180" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="getprop" value="src/get_2025_proposals.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="600" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="propxlsx" value="data/pycontw_2025_proposals_&lt;DATE&gt;.xlsx" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="560" y="380" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cli_llm" value="run_llm.py&#10;(adds src/ to sys.path, line 11-14)&#10;OPENAI_TEMPERATURE=0  ⚠️ 設了沒人讀" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="500" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cli_cat" value="run_categorize.py&#10;(uses `from src.llm.categorize`)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="560" y="500" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cli_diff" value="run_proposal_diff.py&#10;(adds src/ to sys.path)&#10;OPENAI_TEMPERATURE=0  ⚠️ 同樣沒人讀" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1040" y="500" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mainllm" value="src/main_llm.py&#10;subparsers: review / evaluate / both / diff" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="80" y="640" width="280" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sub_review" value="execute_review&#10;→ src/llm/review.py:241&#10;run_llm_review_async" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="40" y="740" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sub_eval" value="execute_evaluation&#10;→ src/evaluation/evaluator.py&#10;ReviewEvaluator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="240" y="740" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sub_diff_main" value="execute_diff&#10;src/main_llm.py:267-312" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="840" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cat_module" value="src/llm/categorize.py&#10;run_categorization" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="600" y="640" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="diff_target" value="src/llm/proposal_diff.py&#10;run_proposal_diff_analysis_sync" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="1040" y="840" width="280" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dup_a" value="⚠️ DUPLICATE A&#10;diff 子指令重複實作&#10;run_llm.py diff   ←→   run_proposal_diff.py&#10;兩條 CLI 都呼叫同一個函式" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff4c3;strokeColor=#d79b00;fontSize=11;fontStyle=2;dashed=1" vertex="1" parent="1">
+          <mxGeometry x="540" y="940" width="320" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="out_review" value="output/llm_review_&lt;MODEL&gt;_&lt;DATE&gt;.xlsx" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="40" y="1080" width="280" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="human_reviews" value="data/db_merged_fixed/reviews_&lt;DATE&gt;.xlsx&#10;(human ground truth)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="20" y="1170" width="320" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="out_eval" value="output/llm_evaluation_&lt;MODEL&gt;_&lt;DATE&gt;.xlsx" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="40" y="1260" width="280" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="out_cat" value="output/proposal_categories_&lt;MODEL&gt;_&lt;DATE&gt;.xlsx" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="540" y="740" width="320" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="out_diff" value="output/proposal_diff_&lt;MODEL&gt;_&lt;DATE&gt;.xlsx" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="1060" y="1080" width="280" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stage1" value="data/...snapshot_20250427.xlsx&#10;(stage1 input)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="1060" y="380" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend" value="圖例&#10;━━━━━━━━━━━━━━━━━━━&#10;🔵 外部系統 / 入口&#10;🟡 模組程式&#10;🟣 main dispatcher&#10;🟠 子模組&#10;🔴 CLI 入口腳本&#10;🟢 資料檔（xlsx）&#10;⚠️  問題標註（虛線框）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="1060" y="1180" width="280" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="metabase" target="connector">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="connector" target="getprop">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="getprop" target="propxlsx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e4a" style="endArrow=classic;html=1;" edge="1" parent="1" source="propxlsx" target="cli_llm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4b" style="endArrow=classic;html=1;" edge="1" parent="1" source="propxlsx" target="cli_cat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4c" style="endArrow=classic;html=1;" edge="1" parent="1" source="propxlsx" target="cli_diff">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4d" style="endArrow=classic;html=1;" edge="1" parent="1" source="stage1" target="cli_diff">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e5a" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cli_llm" target="mainllm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5b" style="endArrow=classic;html=1;" edge="1" parent="1" source="cli_cat" target="cat_module">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e6a" style="endArrow=classic;html=1;" edge="1" parent="1" source="mainllm" target="sub_review">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6b" style="endArrow=classic;html=1;" edge="1" parent="1" source="mainllm" target="sub_eval">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6c" style="endArrow=classic;html=1;" edge="1" parent="1" source="mainllm" target="sub_diff_main">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e7a" style="endArrow=classic;html=1;strokeColor=#B85450;strokeWidth=2;dashed=1;" edge="1" parent="1" source="sub_diff_main" target="diff_target">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="870" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7b" style="endArrow=classic;html=1;strokeColor=#B85450;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cli_diff" target="diff_target">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e8a" style="endArrow=classic;html=1;" edge="1" parent="1" source="sub_review" target="out_review">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8b" style="endArrow=classic;html=1;" edge="1" parent="1" source="out_review" target="sub_eval">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="1050" />
+              <mxPoint x="330" y="1050" />
+              <mxPoint x="330" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8c" style="endArrow=classic;html=1;" edge="1" parent="1" source="human_reviews" target="sub_eval">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="1195" />
+              <mxPoint x="380" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8d" style="endArrow=classic;html=1;" edge="1" parent="1" source="sub_eval" target="out_eval">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="1240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8e" style="endArrow=classic;html=1;" edge="1" parent="1" source="cat_module" target="out_cat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8f" style="endArrow=classic;html=1;" edge="1" parent="1" source="diff_target" target="out_diff">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ann_dup_a" style="endArrow=none;html=1;dashed=1;strokeColor=#D6B656;" edge="1" parent="1" source="dup_a" target="diff_target">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="LLM Call Paths" id="page2">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title2" value="LLM Call Paths — ⚠️ DUPLICATE B" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathA_box" value="路徑 A：LangChain" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="600" height="500" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathA_entry" value="src/llm/review.py:51&#10;setup_llm_chain(prompt_file, model_name, output_model)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="100" y="150" width="520" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathA_branch" value="model 家族分支（src/llm/review.py:60-67）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="220" width="520" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathA_gemini" value="&quot;gemini&quot; in name&#10;→ ChatGoogleGenerativeAI(model)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="100" y="290" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pathA_gpt" value="model == &quot;gpt-4o-mini&quot;&#10;→ ChatOpenAI(temperature=0)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="380" y="290" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pathA_o" value="&quot;o3&quot;/&quot;o4&quot; in name&#10;→ ChatOpenAI(reasoning_effort=&quot;high&quot;)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="240" y="380" width="280" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathA_struct" value="llm.with_structured_output(&#10;ProposalReview / EnhancedProposalReview)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="100" y="475" width="520" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathA_users" value="使用者：&#10;• src/llm/review.py（評審）&#10;• src/llm/categorize.py（分類）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left" vertex="1" parent="1">
+          <mxGeometry x="100" y="545" width="520" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathB_box" value="路徑 B：直接呼叫 OpenAI SDK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="740" y="100" width="600" height="500" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathB_entry" value="src/llm/client.py:56&#10;OpenAIClient (AsyncOpenAI wrapper)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="780" y="150" width="520" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathB_branch" value="model 家族分支（src/llm/client.py:83-95）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="780" y="220" width="520" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathB_no_gemini" value="❌ 沒有 Gemini 分支&#10;（與路徑 A 不一致）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="780" y="290" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pathB_gpt" value="model.startswith(&quot;gpt-&quot;)&#10;→ temperature=0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="1060" y="290" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pathB_o" value="model.startswith(&quot;o&quot;)&#10;→ reasoning_effort=...&#10;（不傳 temperature）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="920" y="380" width="280" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathB_retry" value="retry_with_exponential_backoff&#10;(src/llm/client.py:28)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="780" y="475" width="520" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathB_users" value="使用者：&#10;• src/llm/proposal_diff.py（兩個 client：llm + translation）&#10;• src/evaluation/evaluator.py（評估）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left" vertex="1" parent="1">
+          <mxGeometry x="780" y="545" width="520" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dup_b" value="⚠️ DUPLICATE B —— Model 家族分支邏輯出現兩次&#10;新增 model 家族（例如 Anthropic Claude / Gemini 2.5）兩邊都得改。&#10;路徑 A vs B 行為不一致：路徑 B 不支援 Gemini。" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;dashed=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="640" width="920" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dup_b_arrow_left" style="endArrow=classic;startArrow=classic;html=1;dashed=1;strokeColor=#B85450;strokeWidth=2;" edge="1" parent="1" source="pathA_branch" target="pathB_branch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="suggest" value="🛠️ 建議修法&#10;━━━━━━━━━━━━━━━━━━━━━━━━&#10;抽出 src/llm/factory.py：&#10;&#10;def build_llm(model_name, **kwargs) -&gt; LLMLike:&#10;    if &quot;gemini&quot; in model_name: ...&#10;    elif model_name.startswith(&quot;gpt-&quot;): ...&#10;    elif model_name.startswith((&quot;o3&quot;, &quot;o4&quot;)): ...&#10;&#10;然後路徑 A 和 B 都呼叫它，行為才會一致。" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="240" y="760" width="920" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ea1" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pathA_entry" target="pathA_branch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea2" style="endArrow=classic;html=1;" edge="1" parent="1" source="pathA_branch" target="pathA_gemini">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea3" style="endArrow=classic;html=1;" edge="1" parent="1" source="pathA_branch" target="pathA_gpt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea4" style="endArrow=classic;html=1;" edge="1" parent="1" source="pathA_branch" target="pathA_o">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea5" style="endArrow=classic;html=1;" edge="1" parent="1" source="pathA_o" target="pathA_struct">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea6" style="endArrow=classic;html=1;" edge="1" parent="1" source="pathA_struct" target="pathA_users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="eb1" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pathB_entry" target="pathB_branch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb2" style="endArrow=classic;html=1;" edge="1" parent="1" source="pathB_branch" target="pathB_gpt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb3" style="endArrow=classic;html=1;" edge="1" parent="1" source="pathB_branch" target="pathB_o">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb4" style="endArrow=classic;html=1;" edge="1" parent="1" source="pathB_o" target="pathB_retry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eb5" style="endArrow=classic;html=1;" edge="1" parent="1" source="pathB_retry" target="pathB_users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="Issues Summary" id="page3">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title3" value="Known Issues / Footguns（含 cite）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i1" value="⚠️ 1 — diff 子指令重複實作&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;src/main_llm.py:96-110 (subparser) + :267-312 (execute_diff)&#10;run_proposal_diff.py:37-109&#10;→ 兩條 CLI 都呼叫 run_proposal_diff_analysis_sync" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="640" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i2" value="⚠️ 2 — Model 家族分支邏輯出現兩次&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;src/llm/review.py:60-67  (LangChain)&#10;src/llm/client.py:83-95  (裸 SDK)&#10;→ 規則不一致（路徑 B 沒有 Gemini）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="720" y="80" width="640" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i3" value="⚠️ 3 — 兩種 LLM 呼叫風格並存&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;LangChain：src/llm/review.py:11-13&#10;裸 SDK：src/llm/client.py:9 (AsyncOpenAI)&#10;→ retry / 錯誤處理 / close 各一套" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="60" y="220" width="640" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i4" value="⚠️ 4 — Import 風格混用&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;有 src. 前綴：&#10;  src/llm/review.py:15-16, src/evaluation/evaluator.py:13-14&#10;  run_categorize.py:13-14&#10;無 src. 前綴：&#10;  src/main_llm.py:12-14, src/llm/proposal_diff.py:14-15&#10;  run_proposal_diff.py:23-24" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="720" y="220" width="640" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i5" value="⚠️ 5 — sys.path 手動插入分散在四處&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;run_llm.py:11-14&#10;run_proposal_diff.py:11-14&#10;src/db/connector.py:13-15&#10;src/get_2025_proposals.py:5-8&#10;→ 沒有 setup.py / pyproject.toml 統一管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="60" y="360" width="640" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i6" value="⚠️ 6 — OPENAI_TEMPERATURE=0 設了沒人讀&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;設定處：run_llm.py:17, run_proposal_diff.py:17&#10;但實作寫死：&#10;  src/llm/review.py:63 (temperature=0)&#10;  src/llm/client.py:87 (temperature=0)&#10;→ 看起來像可調，其實是死的" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="720" y="420" width="640" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i7" value="⚠️ 7 — logging.basicConfig 重複呼叫&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;src/main_llm.py:18-25, src/llm/review.py:20-27&#10;src/db/connector.py:23-30, src/evaluation/evaluator.py:17-20&#10;run_categorize.py:16-23, run_proposal_diff.py:27-34&#10;→ 只有第一次有效，行為依 import 順序而定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="60" y="520" width="640" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i8" value="⚠️ 8 — review 用 LangChain，evaluate / diff 用裸 SDK&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;review：src/llm/review.py:11-13&#10;evaluate：src/evaluation/evaluator.py:13&#10;diff：src/llm/proposal_diff.py:14&#10;→ debug 時要先確認用的是哪條" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="720" y="600" width="640" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i9" value="⚠️ 9 — README 已標明壞掉的腳本仍留著&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;repo 根目錄：&#10;  api_test.py, notebook_api_example.py, simple_api_example.py&#10;src/utils/pycon_api_client.py&#10;→ readme.md:213-215 說明，但檔案還在&#10;→ 新人會誤以為是入口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="60" y="700" width="640" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="i10" value="⚠️ 10 — proposal_diff 開兩個 OpenAI client&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;src/llm/proposal_diff.py:37-38&#10;  self.llm_client = OpenAIClient(model=model_name, ...)&#10;  self.translation_client = OpenAIClient(model=translation_model, ...)&#10;→ 沒有 client pool / 共用機制&#10;→ 加更多模型會繼續長新欄位" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="720" y="780" width="640" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fix_box" value="🛠️ 建議的整理優先序&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;高優先：⚠️1, 2, 4, 5（架構性問題，越拖越貴）&#10;  → 加 pyproject.toml 把 src 設為 package；刪 sys.path.insert；統一 import；抽 build_llm 工廠&#10;&#10;中優先：⚠️6, 7, 9（誤導性問題，影響新人 onboarding）&#10;  → 刪掉 OPENAI_TEMPERATURE 那行；basicConfig 只在 entry 點呼叫；壞腳本搬到 archive/&#10;&#10;低優先：⚠️3, 8, 10（重構成本高，現狀可運作）&#10;  → 統一到單一 client 抽象，但需要全面測試" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;verticalAlign=top;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="980" width="1300" height="200" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,316 @@
+<mxfile host="app.diagrams.net" modified="2026-04-26T00:00:00.000Z" agent="Claude" version="24.0.0">
+  <diagram name="Two-Stage Flow (I/O + Scripts)" id="page1">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="2100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="PyCon TW 2025 — Two-Stage Review Flow（Input / Script / Output）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="1100" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="subtitle" value="所有檔名、行號、預設輸出路徑均已 fact-check（見 Page 2 證據表）。LLM 為輔助建議，真人投票仍在 Metabase 完成。" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="300" y="55" width="1100" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend" value="圖例&#10;━━━━━━━━━━━━━━━━━━━&#10;🟢 資料檔（input / output xlsx）&#10;🟠 腳本（CLI 入口）&#10;🟡 Prompt 模板（input）&#10;🔵 外部系統（Metabase / 人類）&#10;🔴 Stage-aware 步驟（diff 唯一）&#10;&#10;箭頭：input → script → output&#10;cite 格式：&lt;file&gt;:&lt;line&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="1380" y="100" width="280" height="220" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stage1_band" value="STAGE 1（~4 月）—— 初審" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;align=left;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="1320" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s1_1_in" value="Metabase&#10;(database id = 12)&#10;cite: src/config.py:70" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="170" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_1_script" value="python3 src/get_2025_proposals.py&#10;&#10;output 命名：&#10;data/pycontw_2025_proposals_&lt;DATE&gt;.xlsx&#10;cite: src/get_2025_proposals.py:30-31" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="170" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_1_out" value="data/pycontw_2025_proposals_20250407.xlsx&#10;(178 KB, mtime 4/7)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="980" y="180" width="380" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s1_2_in1" value="data/pycontw_2025_proposals_20250407.xlsx" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="290" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_2_in2" value="prompt/full_prompt.txt&#10;(只有 {PROPOSAL_INFO} 一個 placeholder)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="345" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_2_script" value="python3 run_llm.py review \&#10;  --proposal_file &lt;input&gt; \&#10;  --model o3-mini --reasoning_effort high \&#10;  --with_translation&#10;&#10;預設 output 命名（main_llm.py:138）：&#10;output/llm_review_&lt;model&gt;_&lt;DATE&gt;.xlsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="290" width="380" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_2_out" value="output/llm_review_o3-mini_20250407.xlsx&#10;(95 KB, mtime 4/7)&#10;欄位：summary / comment / vote / *_en" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="980" y="320" width="380" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s1_3_in1" value="data/pycontw_2025_proposals_20250407.xlsx" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="450" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_3_in2" value="prompt/categorization_prompt.txt" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="505" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_3_script" value="python3 run_categorize.py \&#10;  --proposal_file &lt;input&gt; \&#10;  --model o3-mini --reasoning_effort medium&#10;&#10;預設 output 命名（run_categorize.py:72）：&#10;output/proposal_categories_&lt;model&gt;_&lt;DATE&gt;.xlsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="450" width="380" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_3_out" value="output/proposal_categories_o3-mini_20250412.xlsx&#10;(26 KB, mtime 4/12)&#10;⚠️ 比 review 晚 5 天才跑（推論：迭代修 prompt）" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="980" y="475" width="380" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s1_4_in" value="output/llm_review_o3-mini_20250407.xlsx&#10;output/proposal_categories_o3-mini_20250412.xlsx" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="600" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_4_script" value="人類 reviewer 在 Metabase&#10;閱讀 LLM 建議當參考、自行投票 + 留 comment&#10;&#10;⚠️ 不在 codebase 內，無 script" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="500" y="600" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_4_out" value="data/pycontw_2025_proposals_snapshot_20250427.xlsx&#10;(229 KB, 資料截止 4/27)&#10;👉 Stage 1 凍結快照&#10;⚠️ 推論：依檔名 _snapshot_ 後綴 + README:111-115 範例" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="980" y="600" width="380" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="middle_band" value="中間期（4/27 → 5/20）—— 投稿者改稿（完全不在 codebase 內）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=2;align=center;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="40" y="720" width="1320" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stage2_band" value="STAGE 2（~5 月）—— 複審" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;align=left;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="40" y="790" width="1320" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2_1_in" value="Metabase（含投稿者改稿後的版本）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="860" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_1_script" value="python3 src/get_2025_proposals.py&#10;（同 Stage 1，無 stage 概念）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="860" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_1_out" value="data/pycontw_2025_proposals_20250520.xlsx&#10;(203 KB, mtime 5/20)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="980" y="870" width="380" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2_2_in1" value="data/pycontw_2025_proposals_20250520.xlsx" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_2_in2" value="prompt/full_prompt.txt（同 Stage 1）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="1015" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_2_script" value="python3 run_llm.py review \&#10;  --proposal_file &lt;input&gt; \&#10;  --model o4-mini --reasoning_effort high \&#10;  --with_translation&#10;&#10;⚠️ model 升級 o3-mini → o4-mini（推論自實際 output 檔名）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="960" width="380" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_2_out" value="output/llm_review_o4-mini_20250520.xlsx&#10;(125 KB, mtime 5/20)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="980" y="985" width="380" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2_3_in1" value="data/pycontw_2025_proposals_20250520.xlsx" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="1110" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_3_in2" value="prompt/categorization_prompt.txt" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="1165" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_3_script" value="python3 run_categorize.py \&#10;  --proposal_file &lt;input&gt; \&#10;  --model o4-mini --reasoning_effort high" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="1110" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_3_out" value="output/proposal_categories_o4-mini_20250520.xlsx&#10;(23 KB, mtime 5/20)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="980" y="1135" width="380" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2_4_marker" value="🔴 STAGE-AWARE STEP（唯一一個）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;align=center" vertex="1" parent="1">
+          <mxGeometry x="40" y="1230" width="1320" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2_4_in1" value="data/pycontw_2025_proposals_snapshot_20250427.xlsx&#10;👉 stage1_file（從 Stage 1 凍結點來）" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#b85450;strokeWidth=2;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="1280" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_4_in2" value="data/pycontw_2025_proposals_20250520.xlsx&#10;👉 stage2_file" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#b85450;strokeWidth=2;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="1340" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_4_in3" value="prompt/proposal_diff_prompt.txt&#10;({stage1_*} + {stage2_*} 各 5 placeholders)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="1400" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_4_script" value="python3 run_proposal_diff.py \&#10;  --stage1_file snapshot_20250427.xlsx \&#10;  --stage2_file 20250520.xlsx \&#10;  --model o4-mini --reasoning_effort high \&#10;  --translation_model gpt-4o-mini&#10;&#10;（等價：python3 run_llm.py diff ...）&#10;&#10;預設 output 命名（run_proposal_diff.py:75）：&#10;output/proposal_diff_&lt;model&gt;_&lt;DATE&gt;.xlsx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#b85450;strokeWidth=2;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="1280" width="380" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_4_out" value="output/proposal_diff_o4-mini_20250525.xlsx&#10;(48 KB, mtime 5/25)&#10;每筆：proposal_id / stage_diff / translated_stage_diff" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#b85450;strokeWidth=2;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="980" y="1340" width="380" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2_5_in" value="output/llm_review_o4-mini_20250520.xlsx&#10;output/proposal_categories_o4-mini_20250520.xlsx&#10;output/proposal_diff_o4-mini_20250525.xlsx" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="80" y="1500" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_5_script" value="人類 reviewer 在 Metabase&#10;用 diff 報告快速判斷&#10;「投稿者有沒有針對 Stage 1 意見改進」&#10;然後重新投票&#10;&#10;⚠️ 不在 codebase 內，無 script" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="500" y="1500" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_5_out" value="（最終投票結果在 Metabase，&#10;不會回流到 repo 的 output/）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="980" y="1520" width="380" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="key_insight" value="🔑 關鍵觀察&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;1. Stage 1 / Stage 2 的 review、categorize 用**同一支 script**，差別只在 input 檔名跟 output 日期戳（model 也升級了，但這是執行參數，不是流程設計）&#10;2. 唯一「stage 感知」的步驟是 run_proposal_diff.py：必須同時輸入 stage1 + stage2 兩個 xlsx&#10;3. 中間期（投稿者改稿）完全不在 codebase 內，靠 Metabase&#10;4. 真人投票結果留在 Metabase，不會回流到 repo——LLM output 跟人類 vote 是兩個獨立的儲存體" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff4c3;strokeColor=#d79b00;fontSize=12;align=left;verticalAlign=top;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="1640" width="1620" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="caveat" value="⚠️ 推論 vs 驗證的免責聲明&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;✅ 程式行為（script、output 命名、預設參數、prompt placeholders）：均經 fact-check（見 Page 2）&#10;⚠️ 哪份 xlsx 對應「Stage 1 / Stage 2」是依據檔名 + README:111-115 的範例 + 檔案 mtime 推論&#10;⚠️ 4/27→5/20 是「投稿者改稿期」是依 PyCon 審稿慣例 + 檔案時間戳推論，codebase 沒明說&#10;❌ 4/12 categorize 比 4/7 review 晚 5 天，原因不確定（可能是 prompt 還在迭代）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="1840" width="1620" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1_1" style="endArrow=classic;html=1;" edge="1" parent="1" source="s1_1_in" target="s1_1_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1_2" style="endArrow=classic;html=1;" edge="1" parent="1" source="s1_1_script" target="s1_1_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e2_1" style="endArrow=classic;html=1;" edge="1" parent="1" source="s1_2_in1" target="s1_2_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2_2" style="endArrow=classic;html=1;" edge="1" parent="1" source="s1_2_in2" target="s1_2_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2_3" style="endArrow=classic;html=1;" edge="1" parent="1" source="s1_2_script" target="s1_2_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e3_1" style="endArrow=classic;html=1;" edge="1" parent="1" source="s1_3_in1" target="s1_3_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3_2" style="endArrow=classic;html=1;" edge="1" parent="1" source="s1_3_in2" target="s1_3_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3_3" style="endArrow=classic;html=1;" edge="1" parent="1" source="s1_3_script" target="s1_3_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e4_1" style="endArrow=classic;html=1;" edge="1" parent="1" source="s1_4_in" target="s1_4_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4_2" style="endArrow=classic;html=1;" edge="1" parent="1" source="s1_4_script" target="s1_4_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e21_1" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2_1_in" target="s2_1_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21_2" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2_1_script" target="s2_1_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e22_1" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2_2_in1" target="s2_2_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22_2" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2_2_in2" target="s2_2_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22_3" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2_2_script" target="s2_2_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e23_1" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2_3_in1" target="s2_3_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23_2" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2_3_in2" target="s2_3_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23_3" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2_3_script" target="s2_3_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e24_1" style="endArrow=classic;html=1;strokeColor=#B85450;strokeWidth=2;" edge="1" parent="1" source="s2_4_in1" target="s2_4_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24_2" style="endArrow=classic;html=1;strokeColor=#B85450;strokeWidth=2;" edge="1" parent="1" source="s2_4_in2" target="s2_4_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24_3" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2_4_in3" target="s2_4_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24_4" style="endArrow=classic;html=1;strokeColor=#B85450;strokeWidth=2;" edge="1" parent="1" source="s2_4_script" target="s2_4_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e25_1" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2_5_in" target="s2_5_script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25_2" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2_5_script" target="s2_5_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_cross_snapshot" style="endArrow=classic;html=1;dashed=1;strokeColor=#82B366;strokeWidth=2;" edge="1" parent="1" source="s1_4_out" target="s2_4_in1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1500" y="640" />
+              <mxPoint x="1500" y="1305" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram name="Fact-Check Evidence" id="page2">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title2" value="Fact-Check Evidence Table（每個聲稱都可獨立驗證）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="1100" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="confidence_legend" value="信心分級&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;✅ 程式碼直接 cite — 行為由 source code 決定，不會錯&#10;📂 檔案系統實證 — 用 ls 直接看到，size 跟 mtime 都對得起來&#10;⚠️  推論 — 從檔名慣例 / 時間戳 / README 範例組合推出，需人為複核" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="1620" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="evidence_section1" value="✅ 程式碼直接 cite（高信心）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;align=left;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="1620" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ev1" value="聲稱：Metabase database id = 12&#10;cite：src/config.py:70  →  METABASE_DATABASE_ID = 12" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ev2" value="聲稱：get_2025_proposals.py 寫到 data/pycontw_2025_proposals_&lt;DATE&gt;.xlsx&#10;cite：src/get_2025_proposals.py:27,30&#10;  output_dir = &quot;data&quot;&#10;  output_file = os.path.join(output_dir, f&quot;pycontw_2025_proposals_{timestamp}.xlsx&quot;)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="860" y="260" width="800" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ev3" value="聲稱：run_llm.py review 預設輸出 output/llm_review_&lt;model&gt;_&lt;DATE&gt;.xlsx&#10;cite：src/main_llm.py:138&#10;  output_file = output_dir / f&quot;llm_review_{args.model}_{date_str}.xlsx&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="360" width="800" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ev4" value="聲稱：run_categorize.py 預設輸出 output/proposal_categories_&lt;model&gt;_&lt;DATE&gt;.xlsx&#10;cite：run_categorize.py:72&#10;  output_file = output_dir / f&quot;proposal_categories_{args.model}_{date_str}.xlsx&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="860" y="360" width="800" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ev5" value="聲稱：run_proposal_diff.py 預設輸出 output/proposal_diff_&lt;model&gt;_&lt;DATE&gt;.xlsx&#10;cite：run_proposal_diff.py:75&#10;  output_file = output_dir / f&quot;proposal_diff_{args.model}_{date_str}.xlsx&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="450" width="800" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ev6" value="聲稱：diff prompt 同時用 {stage1_*} + {stage2_*} 各 5 個 placeholder&#10;cite：prompt/proposal_diff_prompt.txt:6-10, 13-17&#10;  {stage1_title} {stage1_abstract} {stage1_detailed_description} {stage1_outline} {stage1_objective}&#10;  {stage2_title} {stage2_abstract} {stage2_detailed_description} {stage2_outline} {stage2_objective}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="860" y="450" width="800" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ev7" value="聲稱：&quot;stage&quot; 字面只出現在 main_llm.py 跟 proposal_diff.py（其他模組無 stage 概念）&#10;cite：grep -rn stage src/ run_*.py prompt/ → 命中只在&#10;  src/main_llm.py:97-99, 283-302（diff 子指令參數）&#10;  src/llm/proposal_diff.py:40-91, 110-120&#10;  prompt/proposal_diff_prompt.txt" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="560" width="1620" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ev8" value="聲稱：full_prompt.txt 只有一個 {PROPOSAL_INFO} placeholder（review 不知道任何 reviewer comment）&#10;cite：prompt/full_prompt.txt 結尾&#10;  以下是proposal 的資訊：&#10;  {PROPOSAL_INFO}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="1620" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="evidence_section2" value="📂 檔案系統實證（中信心 — 檔案存在 + size + mtime 都驗過）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;align=left;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="40" y="780" width="1620" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ev_files" value="檔名（含 mtime + size）&#10;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#10;data/pycontw_2025_proposals_20250407.xlsx               178 KB  mtime 4/7&#10;data/pycontw_2025_proposals_snapshot_20250427.xlsx     229 KB  mtime 5/25 ⚠️ mtime 跟檔名日期不一致&#10;data/pycontw_2025_proposals_20250520.xlsx              203 KB  mtime 5/20&#10;output/llm_review_o3-mini_20250407.xlsx                 95 KB  mtime 4/7&#10;output/llm_review_o4-mini_20250520.xlsx                125 KB  mtime 5/20&#10;output/proposal_categories_o3-mini_20250412.xlsx        26 KB  mtime 4/12&#10;output/proposal_categories_o4-mini_20250520.xlsx        23 KB  mtime 5/20&#10;output/proposal_diff_o4-mini_20250525.xlsx              48 KB  mtime 5/25&#10;&#10;驗證指令：ls -la data/&lt;files&gt; output/&lt;files&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;align=left;verticalAlign=top;fontFamily=Courier New" vertex="1" parent="1">
+          <mxGeometry x="40" y="820" width="1620" height="240" as="geometry" />
+        </mxCell>
+
+        <mxCell id="evidence_section3" value="⚠️ 推論（低信心 — 需人為複核）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1;align=left;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="40" y="1080" width="1620" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="inf1" value="推論：snapshot_20250427.xlsx = Stage 1 凍結快照&#10;依據：(1) 檔名有 _snapshot_ 後綴；(2) README:111-115 範例就是把它當 --stage1_file 用&#10;風險：如果別人對「Stage 1」的定義不同（例如指 4/7 第一輪），這裡會搞錯" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="1120" width="1620" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="inf2" value="推論：4/27→5/20 是「投稿者改稿期」&#10;依據：(1) 兩份檔案 mtime 差距 + (2) PyCon 一般審稿流程（初審 → 給意見 → 改稿 → 複審）&#10;風險：codebase 完全沒這段註解；可能其實是「reviewer 內部討論期」之類，需跟程序組確認" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="1210" width="1620" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="inf3" value="推論：4/12 categorize 比 4/7 review 晚 5 天的原因&#10;依據：純粹從 mtime 觀察&#10;風險：可能是 prompt 還在迭代、可能是 reviewer 只在某時間點需要 category、可能是分工問題；不確定" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top" vertex="1" parent="1">
+          <mxGeometry x="40" y="1300" width="1620" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,306 +1,215 @@
-# PyCon TW 2025 Proposal Review Assistant
+# PyCon TW 2025 提案審核工具
 
-This project aims to develop an LLM-based system to assist in the review process of PyCon Taiwan conference proposals. The system provides AI-generated preliminary reviews to support human reviewers.
+這個專案提供了一套工具，用於使用 LLM 來審核和評估 PyCon TW 2025 的演講提案。
 
-## Project Goals
-
-1. Assist human reviewers by providing AI-generated preliminary reviews
-2. Validate the effectiveness of LLM-based review assistance
-3. Integrate human review and LLM review data for comparative analysis
-
-## Data Source
-
-Currently, the data source is from the Metabase, and the file is exported as an Excel file.
-The data is stored in the Google Drive, and the file is shared with the team members.
-
-## Project Structure
+## 檔案結構
 
 ```
-.
-├── src/                     # Source code directory
-│   ├── __init__.py          # Python package initialization file
-│   ├── config.py            # Configuration file with paths and settings
-│   ├── models.py            # Data model definitions
-│   ├── llm_review.py        # LLM review functionality
-│   ├── merge_data.py        # Data merging and analysis functionality
-│   └── main.py              # Main program entry point
-├── data/                    # Data directory (sample data or test data)
-├── output/                  # Output directory
-│   ├── simple_prompt_gemini_flash_*.xlsx    # LLM review results using simple prompt
-│   ├── full_prompt_gemini_flash_*.xlsx      # LLM review results using full prompt
-│   ├── pycon_2024_proposal_with_llm_and_review_*.xlsx  # Merged data
-│   ├── vote_analysis_*.json                 # Vote analysis results (JSON format)
-│   └── vote_analysis_*.txt                  # Vote analysis report (human-readable format)
-├── logs/                    # Log directory
-│   ├── llm_review_*.log     # LLM review logs
-│   ├── merge_data_*.log     # Data merging logs
-│   └── main_*.log           # Main program logs
-├── prompt/                  # Prompt directory
-│   ├── simple_prompt.txt    # Simple prompt template
-│   └── full_prompt.txt      # Full prompt template
-└── run.py                   # Entry point script
+PyCon-TW-2025/
+├── data/                 # 資料目錄
+│   └── db_merged_fixed/  # 處理過的資料庫資料
+├── logs/                 # 日誌檔案
+├── output/               # 輸出結果目錄
+├── prompt/               # LLM 提示模板
+│   ├── evaluation_prompt.txt  # 評估提示
+│   ├── full_prompt.txt        # 完整評審提示
+│   └── simple_prompt.txt      # 簡易評審提示
+├── src/                  # 源代碼
+│   ├── db/               # 資料庫相關模組
+│   ├── llm/              # LLM 相關模組
+│   ├── utils/            # 工具函數
+│   ├── evaluation/       # 評估模組
+│   ├── config.py         # 配置檔案
+│   ├── models.py         # 資料模型
+│   └── main_llm.py       # 主執行腳本
+└── run_llm.py                # 主入口點腳本
+└── run_categorize.py         # 提案分類腳本
 ```
 
-## Installation Dependencies
+## 如何使用
+
+### 環境設置
+
+1. 安裝所需的 Python 套件：
 
 ```bash
-pip install pandas langchain-core langchain-google-genai python-dotenv openpyxl pydantic jupyter numpy
+pip install -r requirements.txt
 ```
 
-## Environment Variables Setup
-
-Create a `.env` file in the project root directory and set the following environment variables:
-
-```
-GOOGLE_API_KEY=your_google_api_key_here
-```
-
-## Usage
-
-### Main Program
-
-The entry point script `run.py` provides a complete workflow for running LLM reviews, data merging, and analysis.
+2. 設置環境變數（API 金鑰等）：
 
 ```bash
-# Run the complete workflow (LLM review + data merging and analysis)
-python run.py
-
-# Only run LLM review
-python run.py --mode review
-
-# Only run data merging and analysis
-python run.py --mode merge
-
-# Use simple prompt
-python run.py --prompt simple
-
-# Use full prompt
-python run.py --prompt full
-
-# Use both prompts
-python run.py --prompt both
-
-# Use different model
-python run.py --model pro
-
-# Specify output directory
-python run.py --output-dir ./output
-
-# Skip analysis
-python run.py --no-analyze
+cp .env.example .env
+# 編輯 .env 檔案，設置你的 API 金鑰
 ```
 
-### Using LLM Review Functionality Separately
+### get 2025 提案
+
+#### notice
+- resampled_proposals_20250404.xlsx 是之前測試 2024 年的資料
+- 需要先在 metabase 建立 database 12，並且把 pycontw-2025 的資料匯入
 
 ```bash
-python -m src.llm_review --prompt simple --model flash
+python3 src/get_2025_proposals.py
 ```
 
-### Using Data Merging Functionality Separately
+### 執行 LLM 評審
 
 ```bash
-python -m src.merge_data --simple-llm-file output/simple_prompt_gemini_flash_YYYYMMDD.xlsx --complete-llm-file output/full_prompt_gemini_flash_YYYYMMDD.xlsx
+python3 run_llm.py review \
+  --proposal_file data/pycontw_2025_proposals_20250520.xlsx \
+  --model o4-mini \
+  --reasoning_effort high \
+  --with_translation
 ```
 
-## Output File Description
+### 執行評估
 
-### LLM Review Results
-
-LLM review results are saved in Excel files in the `output/` directory:
-
-- `simple_prompt_gemini_flash_*.xlsx`: LLM review results using simple prompt
-- `full_prompt_gemini_flash_*.xlsx`: LLM review results using full prompt
-
-These files contain the following columns:
-- `proposal_id`: Proposal ID
-- `summary`: Proposal summary
-- `comment`: Review comments
-- `vote`: Voting result (-1, -0, +0, +1)
-
-### Merged Data
-
-Merged data is saved in the `output/pycon_2024_proposal_with_llm_and_review_*.xlsx` file, containing proposal data, human review data, and LLM review data.
-
-### Analysis Results
-
-Analysis results are saved in two formats:
-
-1. JSON format (`output/vote_analysis_*.json`): Contains complete analysis results, suitable for programmatic reading and further processing.
-
-2. Text report (`output/vote_analysis_*.txt`): Human-readable analysis report, including:
-   - LLM vote distribution
-   - Human review vote distribution
-   - Consistency rate between LLM and human reviews
-   - Confusion matrix
-
-These analysis results help evaluate the effectiveness of LLM reviews and compare them with human reviews.
-
-## Implementation Details
-
-### LLM Review Process
-1. **Model**: Using Gemini Flash (gemini-2.0-flash)
-2. **Review Format**:
-   ```python
-   class ProposalReview(BaseModel):
-       summary: str
-       comment: str
-       vote: Literal['+1', '+0', '-0', '-1']
-   ```
-
-### Analysis Results Example
-
-#### 1. Vote Distribution Comparison
-
-| Vote Type | Human Reviews | Simple Prompt | Full Prompt |
-|-----------|---------------|---------------|-------------|
-| +0        | 62.3%         | 75.3%         | 85.7%       |
-| +1        | 18.2%         | 22.1%         | 10.4%       |
-| -0        | 15.6%         | 1.3%          | 3.9%        |
-| -1        | 3.9%          | 1.3%          | 0%          |
-
-#### 2. Consistency Rates
-- Simple Prompt: 59.7%
-- Full Prompt: 55.8%
-
-#### 3. Confusion Matrix Examples
-
-Simple Prompt Agreement Analysis:
-```
-Human Reviews  +0  +1  -0  -1  All
-LLM Vote                      
-+0            38   8  10   2   58
-+1            10   6   1   0   17
--0             0   0   1   0    1
--1             0   0   0   1    1
-All           48  14  12   3   77
+```bash
+python run_llm.py evaluate \
+  --llm_reviews_file output/llm_review_o3-mini_20250404.xlsx \
+  --human_reviews_file data/db_merged_fixed/reviews_20250404.xlsx \
+  --model o3-mini \
+  --reasoning_effort high
 ```
 
-Full Prompt Agreement Analysis:
+### 同時執行評審和評估
+
+```bash
+python3 run_llm.py \
+  --model o4-mini \
+  --reasoning_effort high \
+  review \
+  --proposal_file data/pycontw_2025_proposals_20250520.xlsx \
+  --with_translation
 ```
-Human Reviews  +0  +1  -0  -1  All
-LLM Vote                       
-+0            41  13  11   1   66
-+1             7   1   0   0    8
--0             0   0   1   2    3
-All           48  14  12   3   77
+
+### 執行提案分類
+
+```bash
+python3 run_categorize.py \
+  --proposal_file data/pycontw_2025_proposals_20250520.xlsx \
+  --model o4-mini \
+  --reasoning_effort high
 ```
 
-### Key Findings
+### 執行提案分類 (限制處理 5 筆提案, --limit 5)
 
-1. Conservative Tendency:
-   - All evaluation methods tend to give neutral ratings (+0)
-   - Full prompt shows extremely conservative behavior (85.7% +0)
-   - Human reviews show more balanced distribution
+```bash
+python3 run_categorize.py \
+  --proposal_file data/pycontw_2025_proposals_20250407.xlsx \
+  --model o3-mini \
+  --reasoning_effort medium \
+  --limit 5
+```
 
-2. Model Performance:
-   - Simple Prompt Agreement Rate: 59.7%
-   - Full Prompt Agreement Rate: 55.8%
-   - Confusion matrices show both models tend to be more conservative than human reviewers
-   - Simple prompt shows slightly better agreement with human reviewers
-   - Limited capability for negative vote prediction
-   - Need for better calibration with human reviewers
+### 執行提案差異比較
 
-## Common Problems in Rejected Proposals
+```bash
+python3 run_proposal_diff.py \
+  --stage1_file data/pycontw_2025_proposals_snapshot_20250427.xlsx \
+  --stage2_file data/pycontw_2025_proposals_20250520.xlsx \
+  --model o4-mini \
+  --reasoning_effort high \
+  --translation_model gpt-4o-mini
+```
 
-Based on data collected during the review process, we found that unsuitable proposals often have the following characteristics:
+## 命令列選項
 
-1. **Insufficient or Overly Brief Information**
-   - Only provides a title, lacking summary, outline, or objectives
-   - Vague outline, making it difficult to judge content quality
-   - No time allocation for the presentation
-   - Merely copying and pasting the same content into different fields
+### 通用選項
 
-2. **Insufficient Relevance to Python**
-   - Topic has weak or no connection to the Python language or ecosystem
-   - More suitable for other technical conferences
-   - Fails to explain why the topic should be shared at a Python conference
+- `--data_dir` - 資料目錄路徑，預設為 `data/db_merged_fixed`
+- `--output_dir` - 輸出目錄路徑，預設為 `output`
+- `--model` - LLM 模型名稱，預設為 `o3-mini`
+- `--reasoning_effort` - 推理努力級別（僅適用於 OpenAI 模型），可選 `low`、`medium`、`high`，預設為 `high`
 
-3. **Lack of Depth and Originality**
-   - Numerous similar tutorials already available online, offering no novel insights
-   - Basic tutorial content without advanced applications
-   - Unable to provide value beyond basic tutorials in the limited time
+### Review 命令選項
 
-4. **Inappropriate Topic Scope**
-   - Too broad, attempting to cover too many topics in a short time
-   - Topic too vague, lacking specific content and clear focus
-   - Not considering how much information the audience can digest in limited time
+- `--proposal_file` - 提案資料檔案路徑（必須）
+- `--prompt_file` - 提示模板檔案路徑，預設為 `prompt/full_prompt.txt`
+- `--output_file` - 輸出檔案路徑（若未指定，則自動生成）
+- `--limit` - 要處理的提案數量上限（用於測試）
+- `--with_translation` - 是否進行翻譯
+- `--translation_model` - 翻譯用 LLM 模型名稱，預設為 `gpt-4o-mini`
 
-5. **Lack of Practical Cases and Application Scenarios**
-   - Missing practical application cases or usage scenarios
-   - Not demonstrating how to solve real problems
-   - Failing to clearly explain the practical value of the technology to the audience
+### Evaluate 命令選項
 
-6. **Too Commercial or Promotional**
-   - Focused on product or service promotion, lacking technical depth
-   - Content resembling an advertisement rather than technical sharing
-   - Failing to provide neutral technical insights
+- `--llm_reviews_file` - LLM 評審結果檔案路徑（必須）
+- `--human_reviews_file` - 人類評審結果檔案路徑（必須）
+- `--prompt_file` - 評估提示模板檔案路徑，預設為 `prompt/evaluation_prompt.txt`
+- `--output_file` - 評估結果輸出檔案路徑（若未指定，則自動生成）
+- `--limit` - 要評估的提案數量上限（用於測試）
 
-7. **Unclear Target Audience and Expected Outcomes**
-   - Not clearly defining the target audience
-   - Not explaining what value or skills the audience will gain from the presentation
-   - Unclear or inconsistent description of the required background knowledge
+### Categorize 命令選項
 
-8. **Structural and Organizational Issues**
-   - Proposal content doesn't match the title
-   - Lack of consistency or logical coherence between sections
-   - Obvious spelling or grammatical errors, showing insufficient preparation
+- `--proposal_file` - 提案資料檔案路徑（必須）
+- `--prompt_file` - 分類提示模板檔案路徑，預設為 `prompt/categorization_prompt.txt`
+- `--output_file` - 輸出檔案路徑（若未指定，則自動生成）
+- `--model` - LLM 模型名稱，預設為 `o3-mini`
+- `--reasoning_effort` - 推理努力級別，可選 `low`、`medium`、`high`，預設為 `medium`
+- `--limit` - 要處理的提案數量上限（用於測試）
 
-9. **Timeliness Issues**
-   - Topic is outdated or lacks innovation
-   - Discussing technology that has been widely explored without providing new perspectives
-   - Failing to reflect current technology trends or industry developments
+### Proposal Diff 命令選項
 
-These problem characteristics are often interrelated, and a poor proposal typically exhibits multiple issues.
+- `--stage1_file` - Stage 1 提案檔案路徑（必須）
+- `--stage2_file` - Stage 2 提案檔案路徑（必須）
+- `--prompt_file` - 差異分析提示模板檔案路徑，預設為 `prompt/proposal_diff_prompt.txt`
+- `--output_file` - 輸出檔案路徑（若未指定，則自動生成）
+- `--model` - LLM 模型名稱，預設為 `o4-mini`
+- `--reasoning_effort` - 推理努力級別，可選 `low`、`medium`、`high`，預設為 `high`
+- `--translation_model` - 翻譯用 LLM 模型名稱，預設為 `gpt-4o-mini`
+- `--limit` - 要處理的提案數量上限（用於測試）
 
-## TODO
+## 例子
 
-### High Priority
-- Optimize the LLM review system to improve consistency
-- Improve analysis methods to provide more useful metrics
-- Add more model comparison tests
+### 使用 o3-mini 模型執行 LLM 評審 (限制處理 5 筆提案)
 
-### Medium Priority
-- Test other LLM models:
-  - Gemini Pro 1.5 / 2
-  - Claude 3 Haiku
-  - GPT-4 Mini
-- LLM result English-Chinese translation functionality
-- LLM-as-a-Judge: Evaluate review alignment
+```bash
+python run_llm.py review \
+  --proposal_file data/db_merged_fixed/resampled_proposals_20250404.xlsx \
+  --model o3-mini \
+  --reasoning_effort high \
+  --limit 5
+```
 
-## Extension Suggestions
+### 使用 o3-mini 模型評估 LLM 評審結果 (限制評估 5 筆提案)
 
-1. Add more analysis metrics, such as Cohen's Kappa coefficient to evaluate review consistency.
+```bash
+python run_llm.py evaluate \
+  --llm_reviews_file output/llm_review_o3-mini_20250404.xlsx \
+  --human_reviews_file data/db_merged_fixed/reviews_20250404.xlsx \
+  --model o3-mini \
+  --reasoning_effort high \
+  --limit 5
+```
 
-2. Implement visualization features to generate charts and reports of review results.
+### 使用 o3-mini 模型對提案進行分類 (限制處理 5 筆提案 & reasoning_effort low 測試)
+### --limit 參數的功能實際上是正常的。問題只是在 README 裡的命令示例缺少了反斜線 \。
 
-3. Add support for more LLM models, such as OpenAI's GPT models.
+```bash
+python3 run_categorize.py \
+  --proposal_file data/pycontw_2025_proposals_20250407.xlsx \
+  --model o3-mini \
+  --reasoning_effort medium
+```
 
-## Contributing
+### 執行提案差異比較 (限制處理 3 筆提案用於測試)
 
-Contributions are welcome! Please:
-1. Open issues for bugs or feature requests
-2. Submit pull requests with improvements
-3. Help improve documentation
-4. Share insights about the review process
+**注意：新版本已改進效能和格式**
+- 使用並發處理，大幅提升執行速度
+- proposal_id 輸出為字串格式，避免 Excel 整數溢位
+- 簡化 prompt 輸出，僅顯示有實際變更的內容
 
-## Privacy and Security Considerations
+```bash
+python3 run_proposal_diff.py \
+  --stage1_file data/pycontw_2025_proposals_snapshot_20250427.xlsx \
+  --stage2_file data/pycontw_2025_proposals_20250520.xlsx \
+  --model o4-mini \
+  --reasoning_effort high \
+  --limit 3
+```
 
-This project involves proposal review data. Please note:
 
-1. **Do Not Upload Real Proposal Data**:
-   - Use anonymized or hypothetical data for testing
-   - If using real data, ensure you have authorization and properly anonymize it
+### note
 
-2. **Protect API Keys**:
-   - Do not commit the `.env` file to public repositories
-   - Rotate API keys regularly
-   - Use environment variables instead of hardcoding keys
-
-3. **Output Data Handling**:
-   - Do not share analysis results containing sensitive information in public
-   - Check and remove any personally identifiable information before sharing results
-
-## References
-
-1. [Gemini API Documentation](https://ai.google.dev/gemini-api/docs/models/experimental-models?hl=en)
-2. [LLM as a Judge: Using Language Models to Evaluate Quality](https://ywctech.net/ml-ai/paper-llm-as-a-judge/)
+the api script is not working (pycon_api_client.py, notebook_api_example.py, api_test.py, simple_api_example.py)
