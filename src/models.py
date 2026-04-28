@@ -7,6 +7,17 @@ class ProposalReview(BaseModel):
     comment: str
     vote: Literal['+1', '+0', '-0', '-1']
     proposal_id: Optional[str] = None
+    title: Optional[str] = None
+    
+class EnhancedProposalReview(BaseModel):
+    """Enhanced review for a PyCon proposal with TC and EN versions"""
+    summary: str
+    comment: str
+    summary_en: Optional[str] = None
+    comment_en: Optional[str] = None
+    vote: Literal['+1', '+0', '-0', '-1']
+    proposal_id: Optional[str] = None
+    title: Optional[str] = None
 
 class VoteStats(BaseModel):
     """Statistics for votes on a proposal"""
