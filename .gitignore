@@ -5,3 +5,12 @@ exp/
 .vscode/
 __pycache__/
 output/
+*.log
+.history/
+archive
+
+# Retired in v2 — not part of production flow:
+/api_test.py
+/simple_api_example.py
+/notebook_api_example.py
+/src/utils/pycon_api_client.py
